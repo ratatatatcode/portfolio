@@ -21,6 +21,11 @@ export default function ExperienceAccordion() {
                 knowledge in Data Structures and Algorithms and Software
                 Development Methodologies.
               </p>
+              <p>
+                Served as Head of Web Development and Pitching at Student Coders
+                for Resourceful and Innovative Programming Techniques, and Co-Head
+                of the TechnoFusion 2025 Hackathon and UI/UX Redesign Challenge.
+              </p>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
