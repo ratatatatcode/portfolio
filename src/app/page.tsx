@@ -20,16 +20,18 @@ export default function Home() {
             constant growth — that’s how I build for the web.
           </p>
         </div>
-        <Image
-          src="/me.png"
-          alt="James Michael"
-          width={120}
-          height={120}
-          className="rounded-full"
-        />
+        <div>
+          <Image
+            src="/me.png"
+            alt="James Michael"
+            width={200}
+            height={200}
+            className="rounded-full"
+          />
+        </div>
       </section>
 
-      <section className="mt-4">
+      <section className="mt-12">
         <h2 className="text-2xl font-bold">About</h2>
         <p className="text-justify text-base text-gray-800 dark:text-gray-300">
           Third-year Computer Science student with hands-on experience in

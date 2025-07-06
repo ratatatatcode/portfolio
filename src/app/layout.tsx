@@ -4,6 +4,7 @@ import './globals.css';
 import { ThemeProvider } from 'next-themes';
 import { ScrollProgress } from '@/components/magicui/scroll-progress';
 import DockComponent from '@/components/navigations/dock';
+import { SmoothCursor } from '@/components/ui/smooth-cursor';
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -28,6 +29,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ScrollProgress />
+          <SmoothCursor />
           <DockComponent />
           {children}
         </ThemeProvider>

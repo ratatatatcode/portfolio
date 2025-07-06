@@ -27,7 +27,7 @@ const DEFAULT_MAGNIFICATION = 42;
 const DEFAULT_DISTANCE = 100;
 
 const dockVariants = cva(
-  'supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[44px] w-max items-center justify-center gap-1.5 rounded-2xl border p-1.5 backdrop-blur-md'
+  'bg-white dark:bg-gray-900 mx-auto mt-8 flex h-[44px] w-max items-center justify-center gap-1.5 rounded-2xl border p-1.5'
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
