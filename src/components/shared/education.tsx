@@ -16,7 +16,13 @@ export default function EducationComponent({
   return (
     <div className="flex w-full items-center gap-2">
       <div>
-        <Image src={img_src} alt="BSU Logo" height={50} width={50} />
+        <Image
+          src={img_src}
+          alt="BSU Logo"
+          height={50}
+          width={50}
+          className="min-h-[50px] min-w-[50px]"
+        />
       </div>
       <div className="flex w-full items-start justify-between gap-4">
         <div>
