@@ -1,11 +1,7 @@
-import React from "react";
-export default function MainLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+import React from 'react';
+export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex gap-10 flex-col items-center justify-start min-h-screen w-full antialiased py-10 mt-4 px-4 md:px-[25%]">
+    <div className="mt-4 flex min-h-screen w-full flex-col items-center justify-start gap-10 px-4 py-10 antialiased md:px-[25%]">
       {children}
     </div>
   );

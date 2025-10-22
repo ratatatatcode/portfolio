@@ -12,8 +12,8 @@ export default function Badge({
   return (
     <>
       <p
-        className={`${bg_color} w-auto rounded-[5px] py-1 px-3 font-semibold text-xs flex items-center gap-2 ${
-          text_color == "white" ? "text-white" : "text-black"
+        className={`${bg_color} flex w-auto items-center gap-2 rounded-[5px] px-3 py-1 text-xs font-semibold ${
+          text_color == 'white' ? 'text-white' : 'text-black'
         }`}
       >
         <span>{icon}</span>

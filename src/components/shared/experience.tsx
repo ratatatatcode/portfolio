@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function ExperienceComponent({
   img_src,
@@ -15,19 +15,19 @@ export default function ExperienceComponent({
 }) {
   return (
     <div className="flex flex-col gap-3">
-      <div className="w-full flex gap-2 items-center">
+      <div className="flex w-full items-center gap-2">
         <div className="">
           <Image
             src={img_src}
             alt="BSU Logo"
             height={50}
             width={50}
-            className="min-w-[50px] min-h-[50px]"
+            className="min-h-[50px] min-w-[50px]"
           />
         </div>
-        <div className="flex gap-4 w-full justify-between items-start">
+        <div className="flex w-full items-start justify-between gap-4">
           <div>
-            <h3 className="font-semibold text-primary/90 text-sm">{company}</h3>
+            <h3 className="text-primary/90 text-sm font-semibold">{company}</h3>
             <p className="text-muted-foreground text-justify text-xs">{role}</p>
           </div>
           <div>
@@ -36,12 +36,8 @@ export default function ExperienceComponent({
         </div>
       </div>
       <div>
-        <p className="font-semibold text-xs text-primary/80">
-          What I do at {company}
-        </p>
-        <p className="text-muted-foreground text-justify text-xs">
-          {experience}
-        </p>
+        <p className="text-primary/80 text-xs font-semibold">What I do at {company}</p>
+        <p className="text-muted-foreground text-justify text-xs">{experience}</p>
       </div>
     </div>
   );

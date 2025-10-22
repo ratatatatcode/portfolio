@@ -1,10 +1,10 @@
-import ExperienceComponent from "../shared/experience";
+import ExperienceComponent from '../shared/experience';
 
 export default function ExperienceSection() {
   return (
     <section className="w-full">
-      <h2 className="font-bold mb-2">EXPERIENCE</h2>
-      <div className="w-full flex flex-col gap-6">
+      <h2 className="mb-2 font-bold">EXPERIENCE</h2>
+      <div className="flex w-full flex-col gap-6">
         <ExperienceComponent
           img_src="/education/BSU003.webp"
           company="STEER Hub - DevOps"
