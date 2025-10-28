@@ -4,9 +4,10 @@ export default function GitHubInfoSection() {
   return (
     <section className="w-full overflow-auto">
       <h2 className="mb-2 font-bold">GITHUB INFO</h2>
+      {/* https://github.com/anuraghazra/github-readme-stats */}
       <div className="flex flex-wrap">
         <img
-          src="https://github-readme-stats.vercel.app/api?username=ratatatatcode&show_icons=true&theme=dark"
+          src="https://github-readme-stats.vercel.app/api?username=ratatatatcode&commits_year=2025&show_icons=true&theme=dark"
           alt="GitHub Stats"
           className="w-full md:w-[49%]"
         />
