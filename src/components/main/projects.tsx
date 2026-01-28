@@ -10,6 +10,14 @@ export default function ProjectsSection() {
       website: undefined,
       github: 'http://github.com/ratatatatcode/blabber-ai',
     },
+    {
+      img_src: '/projects/400br.gif',
+      name: '400BadRequest',
+      description:
+        '4BR Team is a cybersecurity team that competes in international Capture The Flag (CTF) competitions to sharpen real-world security skills.',
+      website: 'https://www.4br.team/',
+      github: 'http://github.com/ratatatatcode/400br',
+    },
   ];
 
   return (
