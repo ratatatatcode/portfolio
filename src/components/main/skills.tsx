@@ -29,7 +29,7 @@ export default function SkillsSection() {
   return (
     <section className="w-full">
       <h2 className="mb-2 font-bold">SKILLS</h2>
-      <div className="flex w-full flex-wrap gap-1">
+      <div className="flex w-full flex-wrap justify-evenly gap-1">
         {skills.map((skill) => (
           <Badge
             key={skill.text}

@@ -18,20 +18,27 @@ export default function ProjectsSection() {
       website: 'https://www.4br.team/',
       github: 'http://github.com/ratatatatcode/400br',
     },
+    {
+      img_src: '/projects/wordle-clone.gif',
+      name: 'WORLDE Clone',
+      description:
+        'A small Wordle-inspired game — figure out the word in a few tries, built with Next.js.',
+      github: 'http://github.com/ratatatatcode/wordle-web',
+    },
   ];
 
   return (
     <section className="w-full">
       <h2 className="mb-2 font-bold">PROJECTS</h2>
-      <div className="grid grid-cols-1 gap-2 lg:grid-cols-2">
-        {projects.map((project) => (
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {projects.map((proj, idx) => (
           <ProjectContainer
-            key={project.name}
-            img_src={project.img_src}
-            name={project.name}
-            description={project.description}
-            website={project.website}
-            github={project.github}
+            key={idx}
+            img_src={proj.img_src}
+            name={proj.name}
+            description={proj.description}
+            website={proj.website}
+            github={proj.github}
           />
         ))}
       </div>
