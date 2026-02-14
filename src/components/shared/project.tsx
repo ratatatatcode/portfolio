@@ -17,7 +17,7 @@ export default function ProjectContainer({
   github?: string;
 }) {
   return (
-    <div className="flex h-[350px] w-full flex-col justify-between rounded-2xl border p-4 lg:w-[300px]">
+    <div className="flex h-[360px] w-full flex-col justify-between rounded-2xl border p-4 lg:w-[290px]">
       <div className="flex flex-col gap-2">
         <Image src={img_src} alt={name} width={400} height={400} className="rounded-2xl" />
         <div>

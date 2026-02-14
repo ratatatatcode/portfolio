@@ -30,7 +30,7 @@ export default function ProjectsSection() {
   return (
     <section className="w-full">
       <h2 className="mb-2 font-bold">PROJECTS</h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="flex flex-wrap items-center justify-center gap-4">
         {projects.map((proj, idx) => (
           <ProjectContainer
             key={idx}
