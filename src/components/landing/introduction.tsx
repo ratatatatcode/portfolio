@@ -38,7 +38,7 @@ export default function Introduction() {
           width={60}
           src="/programming/node.jpg"
           alt="Logo"
-          className="absolute -top-3 -left-2.5 -rotate-20 shadow-[-3px_3px_0px_0px_rgba(0,0,0,0.3)]"
+          className="absolute -top-3 -left-2.5 w-auto -rotate-20 shadow-[-3px_3px_0px_0px_rgba(0,0,0,0.3)]"
           loading="eager"
         />
         <Image
@@ -46,7 +46,7 @@ export default function Introduction() {
           width={45}
           src="/programming/js.png"
           alt="Logo"
-          className="absolute -bottom-2.5 -left-5 -rotate-30 shadow-[-3px_3px_0px_0px_rgba(0,0,0,0.3)]"
+          className="absolute -bottom-2.5 -left-5 w-auto -rotate-30 shadow-[-3px_3px_0px_0px_rgba(0,0,0,0.3)]"
           loading="eager"
         />
         <Image
@@ -54,7 +54,7 @@ export default function Introduction() {
           width={65}
           src="/programming/python.png"
           alt="Logo"
-          className="absolute -top-5 -right-5 -rotate-15 shadow-[-3px_3px_0px_0px_rgba(0,0,0,0.3)]"
+          className="absolute -top-5 -right-5 w-auto -rotate-15 shadow-[-3px_3px_0px_0px_rgba(0,0,0,0.3)]"
           loading="eager"
         />
         <Image
@@ -62,7 +62,7 @@ export default function Introduction() {
           width={45}
           src="/programming/sql.png"
           alt="Logo"
-          className="absolute top-4.5 -right-7.5 rotate-15 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)]"
+          className="absolute top-4.5 -right-7.5 w-auto rotate-15 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)]"
           loading="eager"
         />
         <Image
@@ -70,7 +70,7 @@ export default function Introduction() {
           width={45}
           src="/programming/nextjs.jpeg"
           alt="Logo"
-          className="absolute -right-2.5 bottom-2.5 rotate-25 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)]"
+          className="absolute -right-2.5 bottom-2.5 w-auto rotate-25 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)]"
           loading="eager"
         />
       </div>
