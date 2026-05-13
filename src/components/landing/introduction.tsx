@@ -50,8 +50,8 @@ export default function Introduction() {
           loading="eager"
         />
         <Image
-          height={65}
-          width={65}
+          height={55}
+          width={55}
           src="/programming/python.png"
           alt="Logo"
           className="absolute -top-5 -right-5 w-auto -rotate-15 shadow-[-3px_3px_0px_0px_rgba(0,0,0,0.3)]"
