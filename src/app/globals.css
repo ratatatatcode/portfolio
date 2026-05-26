@@ -48,7 +48,7 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
+  --background: oklch(0.9067 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -125,5 +125,20 @@
     @apply bg-background text-foreground font-sans;
     @apply bg-background text-foreground;
     font-family: var(--font-poppins), 'Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif';
+  }
+}
+
+.waving-character {
+  animation: wave 2s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(-8deg);
+  }
+
+  100% {
+    transform: rotate(8deg);
   }
 }
