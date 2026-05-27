@@ -19,10 +19,11 @@ export default function Introduction() {
       </p>
       <Image
         src="/logo/wave.png"
-        width={60}
-        height={60}
         alt="Logo"
-        className="waving-character absolute top-10 right-5 drop-shadow-xl md:right-0 md:h-35 md:w-35 lg:right-5"
+        width={140}
+        height={140}
+        priority
+        className="waving-character absolute top-10 right-5 h-15 w-15 md:h-35 md:w-35 lg:right-5"
       />
     </section>
   );
