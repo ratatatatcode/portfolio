@@ -6,7 +6,7 @@ import { MdEmail } from 'react-icons/md';
 
 export default function About() {
   return (
-    <section className="my-10 flex flex-col justify-center md:w-[50%]">
+    <section className="my-5 flex flex-col justify-center md:w-[50%]">
       <h2 className="text-2xl font-bold">
         <u>About</u>
       </h2>
