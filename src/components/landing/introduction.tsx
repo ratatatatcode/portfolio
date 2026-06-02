@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Introduction() {
   return (
-    <section className="relative mb-5 flex h-auto flex-col rounded-md p-10 shadow-[20px_20px_60px_#cecece,-20px_-20px_60px_#f2f2f2] md:w-[50%]">
+    <section className="relative mb-5 flex h-auto flex-col rounded-md border-2 border-[#d4d4d4] p-10 shadow-[inset_0_0_12px_2px_rgba(0,0,0,0.12),inset_0_0_30px_6px_rgba(0,0,0,0.08)] md:w-[50%]">
       <h1 className="text-5xl">
         Hi, <span className="font-extrabold">I am James</span>
       </h1>
