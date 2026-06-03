@@ -1,13 +1,8 @@
-import Introduction from '@/components/landing/introduction';
-import About from '@/components/landing/about';
-import Experience from '@/components/landing/experience';
-
 export default function Home() {
   return (
-    <>
-      <Introduction />
-      <About />
-      <Experience />
-    </>
+    <div className="min-h-screen w-full flex items-center justify-center flex-col">
+      <h1 className="text-4xl font-bold">Hello, I am James</h1>
+      <p>The page is under construction.</p>
+    </div>
   );
 }
