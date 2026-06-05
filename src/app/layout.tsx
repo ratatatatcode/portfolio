@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-import { Poppins, Geist } from "next/font/google";
-import "./globals.css";
-import { cn } from "@/lib/utils";
+import type { Metadata } from 'next';
+import { Poppins, Geist } from 'next/font/google';
+import './globals.css';
+import { cn } from '@/lib/utils';
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: '--font-poppins',
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
-  title: "Magnaye | Full Stack Developer",
+  title: 'Magnaye | Full Stack Developer',
   description:
-    "Portfolio of James Michael Magnaye, a Full Stack Developer and Computer Science undergraduate specializing in React, Next.js, Node.js, UI/UX design, and real-world web applications.",
+    'Portfolio of James Michael Magnaye, a Full Stack Developer and Computer Science undergraduate specializing in React, Next.js, Node.js, UI/UX design, and real-world web applications.',
 };
 
 export default function RootLayout({
@@ -23,10 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={cn("font-sans", geist.variable)}>
-      <body className={`${poppins.variable} scroll-smooth antialiased`}>
-        {children}
-      </body>
+    <html lang="en" suppressHydrationWarning className={cn('font-sans', geist.variable)}>
+      <body className={`${poppins.variable} scroll-smooth antialiased`}>{children}</body>
     </html>
   );
 }
