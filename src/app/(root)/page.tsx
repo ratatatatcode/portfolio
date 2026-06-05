@@ -1,8 +1,13 @@
+import IntroductionComponent from "@/components/landing/introduction";
+
 export default function Home() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center flex-col">
-      <h1 className="text-4xl font-bold">Hello, I am James</h1>
-      <p>The page is under construction.</p>
-    </div>
+    <>
+      <div className="w-[10%]"></div>
+      <div className="w-[60%]">
+        <IntroductionComponent />
+      </div>
+      <div className="w-[30%]"></div>
+    </>
   );
 }
