@@ -40,3 +40,18 @@ export const projects = [
     github: 'https://github.com/ratatatatcode/wordle-web',
   },
 ];
+
+export const otherProjects = [
+  {
+    id: 1,
+    title: 'Roblox Adventure Game',
+    description:
+      'An adventure game currently in development using Roblox Studio and the Luau programming language. Additional details and gameplay features will be revealed upon release.',
+  },
+  {
+    id: 2,
+    title: 'Learning App',
+    description:
+      'A mobile application based on my personal approach to relearning specific topics. Built using React Native.',
+  },
+];
