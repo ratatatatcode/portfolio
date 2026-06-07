@@ -6,7 +6,7 @@ import { MdEmail } from 'react-icons/md';
 
 export default function SocialLinksComponent() {
   return (
-    <div className="mt-2 flex">
+    <div className="mt-2 mb-4 flex md:mb-0">
       <Link href="https://facebook.com/hashtugs">
         <FaFacebookF className="h-8 w-8 bg-[#3B579D] pt-2 text-white" />
       </Link>

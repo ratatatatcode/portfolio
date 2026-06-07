@@ -6,12 +6,12 @@ import ProjectListComponent from '@/components/landing/projects/projects';
 export default function Home() {
   return (
     <>
-      <section className="w-[10%]"></section>
-      <section className="scrollbar-hide h-screen w-[60%] gap-4 overflow-y-auto p-4">
+      <section className="hidden md:block md:w-[10%]"></section>
+      <section className="scrollbar-hide h-screen w-full gap-4 overflow-y-auto md:w-[60%]">
         <IntroductionComponent />
         <AboutComponent />
       </section>
-      <section className="scrollbar-hide flex h-screen w-[30%] flex-col items-center gap-4 overflow-y-auto p-4">
+      <section className="scrollbar-hide flex h-screen w-full flex-col items-center gap-4 overflow-y-auto md:w-[30%]">
         <OtherProjectsCompoent />
         <ProjectListComponent />
       </section>
