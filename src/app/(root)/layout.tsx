@@ -1,7 +1,7 @@
 import React from 'react';
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen w-full flex-col items-center p-6 antialiased md:flex-row">
+    <div className="flex min-h-screen w-full flex-col items-center gap-10 p-6 antialiased md:flex-row md:gap-0 md:p-4">
       {children}
     </div>
   );

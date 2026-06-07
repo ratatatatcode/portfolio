@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <section className="hidden md:block md:w-[10%]"></section>
-      <section className="scrollbar-hide h-screen w-full gap-4 overflow-y-auto md:w-[60%]">
+      <section className="scrollbar-hide w-full gap-6 overflow-y-auto md:h-screen md:w-[60%] md:gap-4">
         <IntroductionComponent />
         <AboutComponent />
       </section>

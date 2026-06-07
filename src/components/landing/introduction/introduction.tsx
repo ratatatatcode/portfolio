@@ -6,7 +6,7 @@ export default function IntroductionComponent() {
       <p className="text-muted-foreground mb-2 text-xs font-semibold">
         ratatatatcode/<u>README.md</u>
       </p>
-      <h1 className="text-6xl font-bold">
+      <h1 className="text-5xl font-bold md:text-6xl">
         Hello, I am <span className="text-[#FE3905]">James</span>!
       </h1>
       <p className="text-gray-700">
