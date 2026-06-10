@@ -10,12 +10,14 @@ export default function MenuComponent() {
     <>
       <div className="mt-10">
         <button
-          className="rounded-md bg-gray-700 px-3 py-1 text-2xl font-bold text-white"
+          className={`rounded-md bg-[#C00707] px-3 py-1 text-xl font-bold text-white ${showExperience ? 'hidden' : 'block'}`}
           onClick={() => setShowExperience((prev) => !prev)}
+          disabled={showExperience}
         >
           E
         </button>
       </div>
+
       {showExperience && (
         <ExperienceModalComponent showState={showExperience} setShowState={setShowExperience} />
       )}
