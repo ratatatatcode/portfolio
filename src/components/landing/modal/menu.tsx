@@ -16,7 +16,9 @@ export default function MenuComponent() {
           E
         </button>
       </div>
-      <ExperienceModalComponent showState={showExperience} setShowState={setShowExperience} />
+      {showExperience && (
+        <ExperienceModalComponent showState={showExperience} setShowState={setShowExperience} />
+      )}
     </>
   );
 }
