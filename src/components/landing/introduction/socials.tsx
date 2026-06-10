@@ -3,7 +3,6 @@ import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { FiGithub } from 'react-icons/fi';
 import { IoCall } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
-import { IoIosDocument } from 'react-icons/io';
 
 export default function SocialLinksComponent() {
   return (
