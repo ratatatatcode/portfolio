@@ -3,6 +3,7 @@ import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { FiGithub } from 'react-icons/fi';
 import { IoCall } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
+import { IoIosDocument } from 'react-icons/io';
 
 export default function SocialLinksComponent() {
   return (
@@ -16,6 +17,14 @@ export default function SocialLinksComponent() {
       <Link href="https://www.linkedin.com/in/magnaye/">
         <FiGithub className="h-8 w-8 bg-[#414142] pt-2 text-white" />
       </Link>
+      <div className="flex h-8 items-center justify-center bg-[#121212]">
+        <Link
+          href="https://www.magnaye.online/docs/resume.pdf"
+          className="px-2 text-sm font-semibold text-white"
+        >
+          RESUME
+        </Link>
+      </div>
       <div className="ml-2 flex flex-col justify-center">
         <div className="flex items-center gap-1">
           <IoCall />
