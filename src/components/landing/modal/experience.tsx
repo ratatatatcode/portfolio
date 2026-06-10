@@ -20,9 +20,9 @@ export default function ExperienceModalComponent({
     <Draggable nodeRef={nodeRef} handle=".drag-handle">
       <div
         ref={nodeRef}
-        className={`scrollbar-hide drag-handle top-1/2 left-1/2 h-100 w-120 overflow-y-scroll rounded-md border border-gray-400 bg-white p-4 ${showState ? 'md:fixed' : 'md:hidden'}`}
+        className={`scrollbar-hide top-1/2 left-1/2 h-100 w-120 overflow-y-scroll rounded-md border border-gray-400 bg-white p-4 ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
-        <div className="flex cursor-move items-center justify-between">
+        <div className="drag-handle flex cursor-move items-center justify-between">
           <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
             <u>EXPERIENCE</u>
           </h2>
