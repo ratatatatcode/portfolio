@@ -17,21 +17,22 @@ export default function ExperienceModalComponent({
   const nodeRef = useRef<HTMLDivElement>(null);
 
   return (
-    <Draggable nodeRef={nodeRef} handle=".drag-handle">
+    <Draggable nodeRef={nodeRef} handle=".drag-handle" cancel=".no-drag">
       <div
         ref={nodeRef}
-        className={`scrollbar-hide top-1/2 left-1/2 h-100 w-120 overflow-y-scroll rounded-md border border-gray-400 bg-white p-4 ${showState ? 'md:fixed' : 'md:hidden'}`}
+        className={`scrollbar-hide drag-handle top-1/2 left-1/2 h-100 w-120 overflow-y-scroll rounded-md border border-gray-400 bg-white p-4 ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
-        <div className="drag-handle flex cursor-move items-center justify-between">
+        <div className="flex cursor-move items-center justify-between">
           <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
             <u>EXPERIENCE</u>
           </h2>
-          <button onClick={() => setShowState(false)}>
+
+          <button className="no-drag" onClick={() => setShowState(false)}>
             <IoMdCloseCircle size={20} />
           </button>
         </div>
         <hr className="mb-2 border-gray-400" />
-        <div className="flex flex-col gap-2">
+        <div className="no-drag flex flex-col gap-2">
           {experiences.map((experience, idx) => (
             <div key={idx} className="my-1 text-sm">
               <p className="font-semibold">{experience.title}</p>
