@@ -2,7 +2,7 @@ import SocialLinksComponent from '@/components/landing/introduction/socials';
 
 export default function IntroductionComponent() {
   return (
-    <div className="w-full md:mt-10 md:w-[85%] md:p-4">
+    <div className="w-full md:mt-5 md:w-[85%] md:p-4">
       <p className="text-muted-foreground mb-2 text-xs font-semibold">
         ratatatatcode/<u>README.md</u>
       </p>
