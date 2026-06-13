@@ -13,5 +13,5 @@ export default function GitHubCalendarClient() {
 
   if (!mounted) return null;
 
-  return <GitHubCalendar username="ratatatatcode" />;
+  return <GitHubCalendar username="ratatatatcode" year={2026} />;
 }
