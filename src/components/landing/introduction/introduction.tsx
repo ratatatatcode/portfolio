@@ -10,11 +10,11 @@ export default function IntroductionComponent() {
         Hello, I am <span className="text-[#FE3905]">James</span>!
       </h1>
       <p className="text-gray-700">
-        Computer Science undergraduate with&nbsp;
+        Computer Science student with&nbsp;
         <strong className="text-[#1476ae]">
-          hands-on experience in full stack development, UI/UX design,
+          hands-on experience in full stack development and UI/UX design,
         </strong>
-        and building real-world applications using React and Node.js.
+        gained through academic work and personal projects.
       </p>
       <SocialLinksComponent />
     </div>
