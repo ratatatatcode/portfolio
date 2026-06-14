@@ -23,8 +23,8 @@ export default function Home() {
         <GitHubComponent />
       </section>
       <section className="scrollbar-hide flex h-screen w-full flex-col items-center gap-4 overflow-y-auto p-6 md:w-[30%] md:p-4">
-        <OtherProjectsCompoent />
         <ProjectListComponent />
+        <OtherProjectsCompoent />
       </section>
     </>
   );
