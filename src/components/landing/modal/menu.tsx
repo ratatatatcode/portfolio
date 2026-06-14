@@ -2,8 +2,9 @@
 
 import ExperienceModalComponent from './experience';
 import CertificationsModalComponent from './certification';
-import { GrCertificate } from 'react-icons/gr';
 import GitHubModalComponent from './github';
+import FreelanceModalComponent from './freelance';
+import { GrCertificate } from 'react-icons/gr';
 import { FaGithub } from 'react-icons/fa6';
 import { useState } from 'react';
 
@@ -11,6 +12,7 @@ export default function MenuComponent() {
   const [showExperience, setShowExperience] = useState(true);
   const [showCertifications, setShowCertifications] = useState(false);
   const [showGitHub, setShowGitHub] = useState(false);
+  const [showFreelance, setShowFreelance] = useState(false);
 
   return (
     <>
@@ -40,6 +42,15 @@ export default function MenuComponent() {
         >
           <FaGithub />
         </button>
+        <button
+          className={`flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
+            showFreelance ? 'hidden' : 'block'
+          }`}
+          onClick={() => setShowFreelance((prev) => !prev)}
+          disabled={showFreelance}
+        >
+          Fl
+        </button>
       </div>
 
       {showExperience && (
@@ -54,6 +65,10 @@ export default function MenuComponent() {
       )}
 
       {showGitHub && <GitHubModalComponent showState={showGitHub} setShowState={setShowGitHub} />}
+
+      {showFreelance && (
+        <FreelanceModalComponent showState={showFreelance} setShowState={setShowFreelance} />
+      )}
     </>
   );
 }
