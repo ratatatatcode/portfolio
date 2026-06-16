@@ -21,7 +21,7 @@ export default function CertificationsModalComponent({
     <Draggable nodeRef={nodeRef} handle=".drag-handle" cancel=".no-drag">
       <div
         ref={nodeRef}
-        className={`scrollbar-hide drag-handle top-3/4 left-1/4 z-90 h-80 w-120 overflow-y-scroll rounded-md border border-gray-400 bg-white p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
+        className={`scrollbar-hide drag-handle top-2/5 left-1/5 z-90 h-80 w-120 overflow-y-scroll rounded-md border border-gray-400 bg-white p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
         <AutoHideHint>Click the header to view all certification proofs.</AutoHideHint>
         <div className="flex cursor-move items-center justify-between">

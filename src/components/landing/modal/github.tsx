@@ -19,7 +19,7 @@ export default function GitHubModalComponent({ showState, setShowState }: GitHub
     <Draggable nodeRef={nodeRef} handle=".drag-handle" cancel=".no-drag">
       <div
         ref={nodeRef}
-        className={`scrollbar-hide drag-handle top-1/3 left-1/5 z-80 h-auto w-120 overflow-y-scroll rounded-md border border-gray-400 bg-white p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
+        className={`scrollbar-hide drag-handle top-1/3 left-[10%] z-80 h-auto w-120 overflow-y-scroll rounded-md border border-gray-400 bg-white p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
         <AutoHideHint>You can drag this modal and reopen it using the sidebar.</AutoHideHint>
         <div className="flex cursor-move items-center justify-between">

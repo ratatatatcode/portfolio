@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { GitHubCalendar } from 'react-github-calendar';
 import AutoHideHint from '@/components/shared/hint';
 import Draggable from 'react-draggable';
 import { IoMdCloseCircle } from 'react-icons/io';
