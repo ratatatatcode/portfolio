@@ -47,17 +47,23 @@ export const otherProjects = [
     title: 'Blabber AI (AI Wrapper)',
     description: 'AI chatbot that uses Google’s Gemini model.',
     github: 'https://github.com/ratatatatcode/blabber-ai',
-    source: '/projects/blabber-ai.gif',
   },
   {
     id: 2,
+    title: 'Weather App (React)',
+    description:
+      'A simple React weather application that displays the current temperature and daytime status.',
+    github: 'https://github.com/ratatatatcode/weather-app',
+  },
+  {
+    id: 3,
     title: 'Roblox Adventure Game',
     description:
       'An adventure game currently in development using Roblox Studio and the Luau programming language. Additional details and gameplay features will be revealed upon release.',
     github: '',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Learning App',
     description:
       'A mobile application based on my personal approach to relearning specific topics. Built using React Native.',
