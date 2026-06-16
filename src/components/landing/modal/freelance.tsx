@@ -18,7 +18,7 @@ export default function FreelanceModalComponent({ showState, setShowState }: Fre
     <Draggable nodeRef={nodeRef} handle=".drag-handle" cancel=".no-drag">
       <div
         ref={nodeRef}
-        className={`scrollbar-hide drag-handle top-1/5 left-3/4 z-70 h-auto w-120 overflow-y-scroll rounded-md border border-gray-400 bg-white p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
+        className={`scrollbar-hide drag-handle top-1/5 left-3/4 z-70 h-auto w-120 overflow-y-scroll rounded-md border border-gray-400 bg-gray-50 p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
         <AutoHideHint>
           You can message me directly, and we can work together on your projects.

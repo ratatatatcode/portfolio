@@ -21,7 +21,7 @@ export default function ExperienceModalComponent({
     <Draggable nodeRef={nodeRef} handle=".drag-handle" cancel=".no-drag">
       <div
         ref={nodeRef}
-        className={`scrollbar-hide drag-handle top-1/2 left-1/2 z-100 h-100 w-120 overflow-y-scroll rounded-md border border-gray-400 bg-white p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
+        className={`scrollbar-hide drag-handle top-1/2 left-1/2 z-100 h-100 w-140 overflow-y-scroll rounded-md border border-gray-400 bg-gray-50 p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
         <AutoHideHint>You can drag this modal and reopen it using the sidebar.</AutoHideHint>
         <div className="flex cursor-move items-center justify-between">
@@ -35,7 +35,7 @@ export default function ExperienceModalComponent({
         <hr className="mb-2 border-gray-400" />
         <div className="no-drag flex flex-col gap-2">
           {experiences.map((experience, idx) => (
-            <div key={idx} className="my-1 text-sm">
+            <div key={idx} className="my-1 text-base">
               <p className="font-semibold">{experience.title}</p>
               <p className="text-muted-foreground text-[0.7rem]">{experience.date}</p>
               <p>• {experience.firstDesc}</p>
