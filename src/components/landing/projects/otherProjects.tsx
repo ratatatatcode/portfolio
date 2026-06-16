@@ -10,6 +10,7 @@ export default function OtherProjectsCompoent() {
         <div className="flex flex-col gap-2">
           {otherProjects.map((project) => (
             <div key={project.id}>
+              {project.title === 'Roblox Adventure Game' && <hr className="mb-2 border-gray-400" />}
               <p className="text-sm font-semibold">{project.title}</p>
               <p className="text-sm">{project.description}</p>
               {project.github && (
@@ -20,9 +21,6 @@ export default function OtherProjectsCompoent() {
                   <FaGithub size={16} />
                   <span className="text-xs">Public</span>
                 </a>
-              )}
-              {project.title === 'Blabber AI (AI Wrapper)' && (
-                <hr className="mb-2 border-gray-400" />
               )}
             </div>
           ))}
