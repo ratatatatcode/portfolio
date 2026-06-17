@@ -2,6 +2,7 @@ import BadgeComponent from '../shared/badge';
 import { FaHtml5, FaJs, FaNodeJs, FaReact, FaFigma } from 'react-icons/fa';
 import { SiNextdotjs, SiExpress, SiMysql, SiFirebase, SiTailwindcss, SiCss } from 'react-icons/si';
 import { DiPhotoshop } from 'react-icons/di';
+import { SiLuau } from 'react-icons/si';
 
 export default function SkillsListComponent() {
   const skills = [
@@ -17,6 +18,7 @@ export default function SkillsListComponent() {
     { text: 'Tailwind CSS', icon: <SiTailwindcss /> },
     { text: 'Figma', icon: <FaFigma /> },
     { text: 'Photoshop', icon: <DiPhotoshop /> },
+    { text: 'Luau | Learning', icon: <SiLuau /> },
   ];
 
   return (
