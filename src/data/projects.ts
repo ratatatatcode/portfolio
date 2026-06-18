@@ -57,13 +57,20 @@ export const otherProjects = [
   },
   {
     id: 3,
+    title: 'Calculator (HTMLCSSJS)',
+    description:
+      'A simple calculator app — perform basic arithmetic operations, built with vanilla HTML, CSS, and JavaScript.',
+    github: 'https://github.com/ratatatatcode/calculator-htmlcssjs',
+  },
+  {
+    id: 4,
     title: 'Roblox Adventure Game',
     description:
       'An adventure game currently in development using Roblox Studio and the Luau programming language. Additional details and gameplay features will be revealed upon release.',
     github: '',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Learning App',
     description:
       'A mobile application based on my personal approach to relearning specific topics. Built using React Native.',
