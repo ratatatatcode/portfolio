@@ -4,7 +4,7 @@ export const projects = [
     title: 'CodeChal',
     src: '/projects/codechal.mp4',
     description:
-      'A competitive programming platform where users can compete solo or as part of a team. Powered by our custom code execution and evaluation engine, without relying on third-party APIs. More details will be available once the platform is officially released.',
+      'A competitive programming platform where users can compete solo or as part of a team. Powered by our own integrated code runner, with working authentication and real-time leaderboards. More details will be available once the platform is officially released.',
     github: '',
   },
   {
