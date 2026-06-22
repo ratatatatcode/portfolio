@@ -19,6 +19,12 @@ export default function SocialLinksComponent() {
         </Link>
         <div className="flex h-8 items-center justify-center bg-[#121212]">
           <Link
+            href="https://www.magnaye.online/docs/cv.pdf"
+            className="border-r border-gray-100 px-2 text-sm font-semibold text-white"
+          >
+            CV
+          </Link>
+          <Link
             href="https://www.magnaye.online/docs/resume.pdf"
             className="px-2 text-sm font-semibold text-white"
           >
