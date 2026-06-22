@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://magnaye.online'),
   title: {
-    default: 'James Magnaye',
+    default: 'Magnaye | Software Developer',
     template: '%s | James Magnaye',
   },
   description:
