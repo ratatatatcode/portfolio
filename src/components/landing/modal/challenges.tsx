@@ -40,7 +40,7 @@ export default function LearningChallengesModalComponent({
           </button>
         </div>
         <hr className="mb-2 border-gray-400" />
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="no-drag flex flex-col items-center justify-center gap-2">
           {challenges.map((challenge) => (
             <Image
               src={challenge.src}
