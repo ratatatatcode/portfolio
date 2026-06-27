@@ -24,7 +24,7 @@ export default function CertificationsModalComponent({
         className={`scrollbar-hide drag-handle top-2/5 left-1/5 z-90 h-80 w-120 overflow-y-scroll rounded-md border border-gray-400 bg-gray-50 p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
         <AutoHideHint>Click the header to view all certification proofs.</AutoHideHint>
-        <div className="flex cursor-move items-center justify-between">
+        <div className="flex cursor-move items-start justify-between">
           <a
             href="https://drive.google.com/drive/folders/16-ggmo0RPa-X_PM_Xk0mKxUjOUnrzWtY?usp=sharing"
             target="_blank"

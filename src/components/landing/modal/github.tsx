@@ -22,7 +22,7 @@ export default function GitHubModalComponent({ showState, setShowState }: GitHub
         className={`scrollbar-hide drag-handle top-1/3 left-[10%] z-80 h-auto w-120 overflow-y-scroll rounded-md border border-gray-400 bg-gray-50 p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
         <AutoHideHint>You can drag this modal and reopen it using the sidebar.</AutoHideHint>
-        <div className="flex cursor-move items-center justify-between">
+        <div className="flex cursor-move items-start justify-between">
           <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
             <u>GITHUB INFORMATION</u>
           </h2>

@@ -4,8 +4,10 @@ import ExperienceModalComponent from './experience';
 import CertificationsModalComponent from './certification';
 import GitHubModalComponent from './github';
 import FreelanceModalComponent from './freelance';
+import LearningChallengesModalComponent from './challenges';
 import { GrCertificate } from 'react-icons/gr';
 import { FaGithub } from 'react-icons/fa6';
+import { FaGamepad } from 'react-icons/fa';
 import { useState } from 'react';
 
 export default function MenuComponent() {
@@ -13,6 +15,7 @@ export default function MenuComponent() {
   const [showCertifications, setShowCertifications] = useState(false);
   const [showGitHub, setShowGitHub] = useState(false);
   const [showFreelance, setShowFreelance] = useState(false);
+  const [showChallenges, setShowChallenges] = useState(false);
 
   return (
     <>
@@ -51,6 +54,15 @@ export default function MenuComponent() {
         >
           Fl
         </button>
+        <button
+          className={`flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
+            showChallenges ? 'hidden' : 'block'
+          }`}
+          onClick={() => setShowChallenges((prev) => !prev)}
+          disabled={showChallenges}
+        >
+          <FaGamepad />
+        </button>
       </div>
 
       {showExperience && (
@@ -68,6 +80,13 @@ export default function MenuComponent() {
 
       {showFreelance && (
         <FreelanceModalComponent showState={showFreelance} setShowState={setShowFreelance} />
+      )}
+
+      {showChallenges && (
+        <LearningChallengesModalComponent
+          showState={showChallenges}
+          setShowState={setShowChallenges}
+        />
       )}
     </>
   );

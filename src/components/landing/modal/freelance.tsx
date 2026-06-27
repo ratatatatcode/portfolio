@@ -23,7 +23,7 @@ export default function FreelanceModalComponent({ showState, setShowState }: Fre
         <AutoHideHint>
           You can message me directly, and we can work together on your projects.
         </AutoHideHint>
-        <div className="flex cursor-move items-center justify-between">
+        <div className="flex cursor-move items-start justify-between">
           <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
             <u>FREELANCE SERVICES</u>
           </h2>

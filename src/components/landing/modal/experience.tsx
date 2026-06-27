@@ -24,7 +24,7 @@ export default function ExperienceModalComponent({
         className={`scrollbar-hide drag-handle top-1/2 left-1/2 z-100 h-100 w-140 overflow-y-scroll rounded-md border border-gray-400 bg-gray-50 p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
         <AutoHideHint>You can drag this modal and reopen it using the sidebar.</AutoHideHint>
-        <div className="flex cursor-move items-center justify-between">
+        <div className="flex cursor-move items-start justify-between">
           <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
             <u>EXPERIENCE</u>
           </h2>
