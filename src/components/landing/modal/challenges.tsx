@@ -24,7 +24,10 @@ export default function LearningChallengesModalComponent({
         ref={nodeRef}
         className={`scrollbar-hide drag-handle top-1/6 left-1/4 z-60 h-100 w-140 overflow-y-scroll rounded-md border border-gray-400 bg-gray-50 p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
-        <AutoHideHint>You can drag this modal and reopen it using the sidebar.</AutoHideHint>
+        <AutoHideHint>
+          Click the images to be directed to their respective links, where you can try them out as
+          well.
+        </AutoHideHint>
         <div className="flex cursor-move items-start justify-between">
           <div className="mb-2 flex flex-col items-start justify-center">
             <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
@@ -42,15 +45,16 @@ export default function LearningChallengesModalComponent({
         <hr className="mb-2 border-gray-400" />
         <div className="no-drag flex flex-col items-center justify-center gap-2">
           {challenges.map((challenge) => (
-            <Image
-              src={challenge.src}
-              alt={challenge.title}
-              width={600}
-              height={150}
-              className="w-auto"
-              key={challenge.id}
-              unoptimized
-            />
+            <a href={challenge.link} key={challenge.id}>
+              <Image
+                src={challenge.src}
+                alt={challenge.title}
+                width={600}
+                height={150}
+                className="w-auto"
+                unoptimized
+              />
+            </a>
           ))}
         </div>
       </div>
