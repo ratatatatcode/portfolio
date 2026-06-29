@@ -58,7 +58,7 @@ export const otherProjects = [
   },
   {
     id: 2,
-    title: 'Weather App (React)',
+    title: 'Weather App (REACT)',
     description:
       'A simple React weather application that displays the current temperature and daytime status.',
     github: 'https://github.com/ratatatatcode/weather-app',
@@ -68,7 +68,7 @@ export const otherProjects = [
     title: 'Calculator (REACT)',
     description:
       'A simple calculator built with React using a dynamic button grid. A rebuilt version of my vanilla JS calculator.',
-    github: 'https://github.com/ratatatatcode/calculator-htmlcssjs',
+    github: 'https://github.com/ratatatatcode/calculator-react',
   },
   {
     id: 4,
