@@ -12,7 +12,7 @@ export const projects = [
     title: 'React Hooks Playground',
     src: '/projects/react-hooks.mkv',
     description:
-      'An interactive React project showcasing the fundamentals of React Hooks through practical examples. Covers useState, useEffect, useRef, useContext, and useMemo, demonstrating state management, side effects, DOM references, context sharing, and performance optimization. More hooks will be added as I continue learning.',
+      'An interactive React project showcasing the fundamentals of React Hooks through practical examples. Covers useState, useEffect, useRef, useContext, useMemo, and useCallback, demonstrating state management, side effects, DOM references, context sharing, and performance optimization. More hooks will be added as I continue learning.',
     github: 'https://github.com/ratatatatcode/react-hooks',
   },
   {
