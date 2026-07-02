@@ -10,19 +10,19 @@ export default function ProjectListComponent() {
           <p className="text-sm">{project.description}</p>
           <div className="justif-center my-2 flex flex-wrap gap-0.5">
             <a
-              className="py- inline-flex items-center gap-1 rounded-lg border bg-black px-3 py-1.5 font-medium text-white"
+              className="py- inline-flex items-center gap-1 rounded-sm border bg-black/80 px-3 py-1.5 font-semibold text-white"
               href={project.github}
             >
               <FaGithub size={16} />
               <span className="text-xs">{project.github ? 'Public' : 'Private'}</span>
             </a>
             {project.position && (
-              <p className="inline-flex items-center rounded-lg border bg-black px-3 py-1.5 font-medium text-white">
+              <p className="inline-flex items-center rounded-sm border bg-black/80 px-3 py-1.5 font-semibold text-white">
                 <span className="text-xs">{project.position}</span>
               </p>
             )}
             {project.role && (
-              <p className="inline-flex items-center rounded-lg border bg-black px-3 py-1.5 font-medium text-white">
+              <p className="inline-flex items-center rounded-sm border bg-black/80 px-3 py-1.5 font-semibold text-white">
                 <span className="text-xs">{project.role}</span>
               </p>
             )}
