@@ -6,6 +6,8 @@ export const projects = [
     description:
       'A competitive programming platform where users can compete solo or as part of a team. Powered by our own integrated code runner, with working authentication and real-time leaderboards. More details will be available once the platform is officially released.',
     github: '',
+    position: 'Project Leader',
+    role: 'Full-Stack',
   },
   {
     id: 2,
@@ -14,6 +16,8 @@ export const projects = [
     description:
       'An interactive React project showcasing the fundamentals of React Hooks through practical examples. Covers useState, useEffect, useRef, useContext, useMemo, and useCallback, demonstrating state management, side effects, DOM references, context sharing, and performance optimization. More hooks will be added as I continue learning.',
     github: 'https://github.com/ratatatatcode/react-hooks',
+    position: 'Independent',
+    role: 'Frontend',
   },
   {
     id: 3,
@@ -22,6 +26,8 @@ export const projects = [
     description:
       'A beginner-friendly guide to full-stack web development using ExpressJS, EJS, and Firebase.',
     github: 'https://github.com/ratatatatcode/express-ejs',
+    position: 'Project Leader',
+    role: 'Full-Stack',
   },
   {
     id: 4,
@@ -30,6 +36,8 @@ export const projects = [
     description:
       'A simple real-time chat application built with Next.js, Express, and Socket.IO, featuring basic messaging and room-based communication.',
     github: 'https://github.com/ratatatatcode/next-express-socket-chat-basic',
+    position: 'Independent',
+    role: 'Full-Stack',
   },
   {
     id: 5,
@@ -38,6 +46,8 @@ export const projects = [
     description:
       "A Flappy Bird-inspired game built with Next.js. Navigate through obstacles and survive as long as possible. Built during my 'I can definitely make a game without learning game loops first' phase.",
     github: 'https://github.com/ratatatatcode/flappy-birdie-web',
+    position: 'Independent',
+    role: 'Frontend',
   },
   {
     id: 6,
@@ -46,6 +56,8 @@ export const projects = [
     description:
       'A Wordle-inspired word puzzle game built with Next.js. Guess the hidden word within a limited number of attempts.',
     github: 'https://github.com/ratatatatcode/wordle-web',
+    position: 'Independent',
+    role: 'Frontend',
   },
 ];
 
