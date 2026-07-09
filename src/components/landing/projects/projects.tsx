@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { projects } from '@/data/projects';
 import { FaGithub } from 'react-icons/fa6';
 
@@ -28,9 +29,11 @@ export default function ProjectListComponent() {
             )}
           </div>
           <hr className="mb-2 border-gray-400" />
-          <video autoPlay loop muted playsInline preload="metadata">
-            <source src={project.src} type="video/mp4" />
-          </video>
+          <Link href={project.src} target="_blank" rel="noopener noreferrer">
+            <video autoPlay loop muted playsInline preload="metadata">
+              <source src={project.src} type="video/mp4" />
+            </video>
+          </Link>
         </div>
       ))}
     </>

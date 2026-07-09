@@ -5,16 +5,15 @@ export default function AboutComponent() {
         <u>MORE ABOUT ME</u>
       </h2>
       <p className="mb-2">
-        I am James Michael D. Magnaye, a quick learner&nbsp;
-        <strong>who enjoys turning ideas into reality</strong>, whether they are games, software
-        applications, or startup projects. <strong>I also work as a freelancer</strong>, and one of
-        the most rewarding parts of it is helping clients achieve their goals. Some have earned
-        perfect scores on their projects, while others have shared updates about their successful
-        presentations after completing the work I helped build.
+        I am James Michael D. Magnaye,{' '}
+        <strong>a quick learner who enjoys turning ideas into reality,</strong>&nbsp;from games and
+        software applications to startup projects. As a freelancer, I find it rewarding to help
+        clients achieve their goals, with many earning perfect scores or successfully presenting
+        projects I helped develop.
       </p>
       <p>
-        <strong>I am currently seeking opportunities as a Software Developer</strong> or in a role
-        that matches my skills and interests. I am also open to paid training programs if required.
+        <strong>I am seeking opportunities as a Software Developer</strong>&nbsp;or in a role that
+        aligns with my skills and interests. I am also open to paid training programs if required.
       </p>
     </div>
   );
