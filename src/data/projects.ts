@@ -93,7 +93,7 @@ export const otherProjects = [
     id: 5,
     title: 'Learning App',
     description:
-      'A mobile application based on my personal approach to relearning specific topics. Built using React Native.',
+      'A mobile application currently in development, based on my personal approach to relearning specific topics. Planned to be built using Next.js with Ionic and Capacitor.',
     github: '',
   },
 ];
