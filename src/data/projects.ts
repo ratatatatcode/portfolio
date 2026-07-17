@@ -11,6 +11,16 @@ export const projects = [
   },
   {
     id: 2,
+    title: 'ResumePal',
+    src: '/projects/resumepal.mp4',
+    description:
+      'An interactive AI (chatbot) powered by Gemini AI model (api). ResumePal creates a resume for you based on your past interactions or a full prompt.',
+    github: '',
+    position: 'Project Leader',
+    role: 'Full-Stack',
+  },
+  {
+    id: 3,
     title: 'React Hooks Playground',
     src: '/projects/react-hooks.mkv',
     description:
@@ -20,7 +30,7 @@ export const projects = [
     role: 'Frontend',
   },
   {
-    id: 3,
+    id: 4,
     title: 'ExpressJS + EJS + Firebase Guide (w/ Documentation)',
     src: '/projects/express-ejs.mp4',
     description:
@@ -30,7 +40,7 @@ export const projects = [
     role: 'Full-Stack',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Real-time Chat Application Sample',
     src: '/projects/next-express-socket-basic.mp4',
     description:
@@ -40,7 +50,7 @@ export const projects = [
     role: 'Full-Stack',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Flappy Bird Clone',
     src: '/projects/flappy-birdie.mp4',
     description:
@@ -50,7 +60,7 @@ export const projects = [
     role: 'Frontend',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Wordle Clone',
     src: '/projects/wordle.mp4',
     description:
