@@ -92,18 +92,4 @@ export const otherProjects = [
       'A simple calculator built with React using a dynamic button grid. A rebuilt version of my vanilla JS calculator.',
     github: 'https://github.com/ratatatatcode/calculator-react',
   },
-  {
-    id: 4,
-    title: 'Roblox Adventure Game',
-    description:
-      'An adventure game currently in development using Roblox Studio and the Luau programming language. Additional details and gameplay features will be revealed upon release.',
-    github: '',
-  },
-  {
-    id: 5,
-    title: 'Learning App',
-    description:
-      'A mobile application currently in development, based on my personal approach to relearning specific topics. Planned to be built using Next.js with Ionic and Capacitor.',
-    github: '',
-  },
 ];

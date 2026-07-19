@@ -10,7 +10,6 @@ export default function OtherProjectsCompoent() {
         <div className="flex flex-col gap-3">
           {otherProjects.map((project) => (
             <div key={project.id}>
-              {project.title === 'Roblox Adventure Game' && <hr className="mb-2 border-gray-400" />}
               <p className="text-sm font-semibold">{project.title}</p>
               <p className="text-sm">{project.description}</p>
               {project.github && (
