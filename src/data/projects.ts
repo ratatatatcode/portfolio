@@ -76,7 +76,7 @@ export const otherProjects = [
     id: 1,
     title: 'Blabber AI (AI Wrapper)',
     description: 'AI chatbot that uses Google’s Gemini model.',
-    github: 'https://github.com/ratatatatcode/blabber-ai',
+    github: '',
   },
   {
     id: 2,
