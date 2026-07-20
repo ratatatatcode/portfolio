@@ -14,7 +14,7 @@ export default function IntroductionComponent() {
         <strong className="text-[#1476ae]">
           hands-on experience in full stack development and UI/UX design,
         </strong>
-        gained through academic work and personal projects.
+        &nbsp;gained through academic work and personal projects.
       </p>
       <SocialLinksComponent />
     </div>
