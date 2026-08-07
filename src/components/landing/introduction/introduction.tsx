@@ -10,7 +10,7 @@ export default function IntroductionComponent() {
         Hello, I am <span className="text-[#FE3905]">James</span>!
       </h1>
       <p className="text-gray-700">
-        Computer Science student with&nbsp;
+        Computer Science graduate with&nbsp;
         <strong className="text-[#1476ae]">
           hands-on experience in full stack development and UI/UX design,
         </strong>
