@@ -21,14 +21,14 @@ export default function MenuComponent() {
     <>
       <div className="mt-10 flex flex-col gap-2">
         <button
-          className={`h-10 w-10 rounded-md bg-[#C00707] text-xl font-bold text-white ${showExperience ? 'hidden' : 'block'}`}
+          className={`z-50 h-10 w-10 rounded-md bg-[#C00707] text-xl font-bold text-white ${showExperience ? 'hidden' : 'block'}`}
           onClick={() => setShowExperience((prev) => !prev)}
           disabled={showExperience}
         >
           Ex
         </button>
         <button
-          className={`flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
+          className={`z-50 flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
             showCertifications ? 'hidden' : 'block'
           }`}
           onClick={() => setShowCertifications((prev) => !prev)}
@@ -37,7 +37,7 @@ export default function MenuComponent() {
           <GrCertificate />
         </button>
         <button
-          className={`flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
+          className={`z-50 flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
             showGitHub ? 'hidden' : 'block'
           }`}
           onClick={() => setShowGitHub((prev) => !prev)}
@@ -46,7 +46,7 @@ export default function MenuComponent() {
           <FaGithub />
         </button>
         <button
-          className={`flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
+          className={`z-50 flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
             showFreelance ? 'hidden' : 'block'
           }`}
           onClick={() => setShowFreelance((prev) => !prev)}
@@ -55,7 +55,7 @@ export default function MenuComponent() {
           Fl
         </button>
         <button
-          className={`flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
+          className={`z-50 flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
             showChallenges ? 'hidden' : 'block'
           }`}
           onClick={() => setShowChallenges((prev) => !prev)}
