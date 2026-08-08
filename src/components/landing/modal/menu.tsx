@@ -88,6 +88,10 @@ export default function MenuComponent() {
           setShowState={setShowChallenges}
         />
       )}
+
+      {(showExperience || showCertifications || showGitHub || showFreelance || showChallenges) && (
+        <div className="fixed inset-0 z-40 bg-black/25" />
+      )}
     </>
   );
 }
