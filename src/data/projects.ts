@@ -1,3 +1,17 @@
+export const liveProjects = [
+  {
+    id: 1,
+    title: 'Lyrica',
+    src: '/projects/lyrica.mp4',
+    description:
+      'A collaborative platform for songwriters, lyricists, composers, producers, and singers. Bring lyrics to life by connecting creators, finding collaborators, and helping singers discover songs they can perform and share.',
+    github: '',
+    position: 'Project Leader',
+    role: 'Full-Stack',
+    website: 'https://www.lyrica.studio/',
+  },
+];
+
 export const projects = [
   {
     id: 1,

@@ -1,7 +1,7 @@
 import { otherProjects } from '@/data/projects';
 import { FaGithub } from 'react-icons/fa6';
 
-export default function OtherProjectsCompoent() {
+export default function OtherProjectsComponent() {
   return (
     <>
       <div className="h-auto w-full rounded-sm border border-gray-400 p-4">

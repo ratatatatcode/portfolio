@@ -5,7 +5,8 @@ import SkillsListComponent from '@/components/landing/skills';
 import ExperienceComponent from '@/components/landing/experience';
 import CertificationsComponent from '@/components/landing/certification';
 import GitHubComponent from '@/components/landing/github/github';
-import OtherProjectsCompoent from '@/components/landing/projects/otherProjects';
+import LiveProjectsComponent from '@/components/landing/projects/liveProjects';
+import OtherProjectsComponent from '@/components/landing/projects/otherProjects';
 import ProjectListComponent from '@/components/landing/projects/projects';
 import AutoHideHint from '@/components/shared/hint';
 
@@ -66,8 +67,9 @@ export default function Home() {
           <AutoHideHint duration={7500}>
             Click the video to view it on a larger screen in a new tab.
           </AutoHideHint>
+          <LiveProjectsComponent />
           <ProjectListComponent />
-          <OtherProjectsCompoent />
+          <OtherProjectsComponent />
         </section>
       </main>
     </>
