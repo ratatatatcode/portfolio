@@ -4,7 +4,7 @@ export default function ExperienceComponent() {
   return (
     <div className="md:hidden">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
+        <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
           <u>EXPERIENCE</u>
         </h2>
       </div>

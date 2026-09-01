@@ -1,7 +1,7 @@
 export default function AboutComponent() {
   return (
     <div className="w-full text-justify text-sm md:w-[90%] md:p-4">
-      <h2 className="mb-2 text-2xl font-bold">
+      <h2 className="mb-2 text-xl font-bold">
         <u>MORE ABOUT ME</u>
       </h2>
       <p className="mb-2">

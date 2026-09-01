@@ -13,7 +13,7 @@ export default function BadgeComponent({
     <>
       <p
         className={`${bg_color} flex w-auto items-center gap-2 rounded-[5px] px-3 py-1 text-xs font-semibold ${
-          text_color == 'white' ? 'text-white' : 'text-black'
+          text_color == 'white' ? 'text-white' : 'text-[#525252]'
         }`}
       >
         <span>{icon}</span>

@@ -9,15 +9,15 @@ export default function SocialLinksComponent() {
     <div className="mt-2 mb-4 flex flex-wrap gap-2 md:mb-0">
       <div className="flex">
         <Link href="https://facebook.com/hashtugs">
-          <FaFacebookF className="h-8 w-8 bg-[#3B579D] pt-2 text-white" />
+          <FaFacebookF className="h-8 w-8 bg-[#0a0a0a] pt-2 text-white" />
         </Link>
         <Link href="https://www.linkedin.com/in/magnaye/">
-          <FaLinkedinIn className="h-8 w-8 bg-[#2E78B6] pt-2 text-white" />
+          <FaLinkedinIn className="h-8 w-8 bg-[#0a0a0a] pt-2 text-white" />
         </Link>
         <Link href="https://www.github.com/ratatatatcode">
-          <FiGithub className="h-8 w-8 bg-[#414142] pt-2 text-white" />
+          <FiGithub className="h-8 w-8 bg-[#0a0a0a] pt-2 text-white" />
         </Link>
-        <div className="flex h-8 items-center justify-center bg-[#121212]">
+        <div className="flex h-8 items-center justify-center bg-[#0a0a0a]">
           <Link
             href="https://www.magnaye.online/docs/cv.pdf"
             className="border-r border-gray-100 px-2 text-sm font-semibold text-white"

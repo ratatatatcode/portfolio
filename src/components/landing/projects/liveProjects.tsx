@@ -18,7 +18,7 @@ export default function LiveProjectsComponent() {
             <div className="justif-center my-2 flex flex-wrap gap-0.5">
               {project.website && (
                 <a
-                  className="inline-flex items-center gap-1 rounded-sm border bg-black/80 px-3 py-1.5 font-semibold text-white"
+                  className="inline-flex items-center gap-1 rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white"
                   href={project.website}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -28,12 +28,12 @@ export default function LiveProjectsComponent() {
                 </a>
               )}
               {project.position && (
-                <p className="inline-flex items-center rounded-sm border bg-black/80 px-3 py-1.5 font-semibold text-white">
+                <p className="inline-flex items-center rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white">
                   <span className="text-xs">{project.position}</span>
                 </p>
               )}
               {project.role && (
-                <p className="inline-flex items-center rounded-sm border bg-black/80 px-3 py-1.5 font-semibold text-white">
+                <p className="inline-flex items-center rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white">
                   <span className="text-xs">{project.role}</span>
                 </p>
               )}

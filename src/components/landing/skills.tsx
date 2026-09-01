@@ -1,5 +1,5 @@
 import BadgeComponent from '../shared/badge';
-import { FaHtml5, FaJs, FaNodeJs, FaReact, FaFigma } from 'react-icons/fa';
+import { FaHtml5, FaJs, FaNodeJs, FaReact, FaFigma, FaCode, FaRobot } from 'react-icons/fa';
 import { SiNextdotjs, SiExpress, SiMysql, SiFirebase, SiTailwindcss, SiCss } from 'react-icons/si';
 import { DiPhotoshop } from 'react-icons/di';
 import { SiLuau } from 'react-icons/si';
@@ -19,11 +19,13 @@ export default function SkillsListComponent() {
     { text: 'Figma', icon: <FaFigma /> },
     { text: 'Photoshop', icon: <DiPhotoshop /> },
     { text: 'Luau | Learning', icon: <SiLuau /> },
+    { text: 'Traditional Development', icon: <FaCode /> },
+    { text: 'AI-assisted Development', icon: <FaRobot /> },
   ];
 
   return (
     <div className="w-full text-justify text-sm md:w-[90%] md:p-4">
-      <h2 className="mb-2 text-2xl font-bold">
+      <h2 className="mb-2 text-xl font-bold">
         <u>SKILLS</u>
       </h2>
       <div className="flex w-full flex-wrap gap-1">
@@ -32,7 +34,7 @@ export default function SkillsListComponent() {
             key={skill.text}
             text={skill.text}
             icon={skill.icon}
-            bg_color="bg-black/80"
+            bg_color="bg-[#0a0a0a]"
             text_color="white"
           />
         ))}

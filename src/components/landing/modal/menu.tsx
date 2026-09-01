@@ -8,61 +8,129 @@ import LearningChallengesModalComponent from './challenges';
 import { GrCertificate } from 'react-icons/gr';
 import { FaGithub } from 'react-icons/fa6';
 import { FaGamepad } from 'react-icons/fa';
-import { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
+import { useEffect, useState } from 'react';
 
 export default function MenuComponent() {
-  const [showExperience, setShowExperience] = useState(true);
+  const [showExperience, setShowExperience] = useState(false);
   const [showCertifications, setShowCertifications] = useState(false);
   const [showGitHub, setShowGitHub] = useState(false);
   const [showFreelance, setShowFreelance] = useState(false);
   const [showChallenges, setShowChallenges] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  useEffect(() => {
+    if (!isExpanded) return;
+
+    const collapseTimer = window.setTimeout(() => setIsExpanded(false), 5000);
+    return () => window.clearTimeout(collapseTimer);
+  }, [isExpanded]);
+
+  const menuButtonClass = `z-50 flex h-9 items-center gap-2 overflow-hidden rounded-md bg-[#0a0a0a] text-sm font-semibold text-white transition-[width,padding] duration-300 ease-in-out ${
+    isExpanded ? 'w-36 px-3' : 'w-9 px-2.5'
+  }`;
+  const menuLabelClass = `whitespace-nowrap transition-[max-width,opacity] duration-200 ease-in-out ${
+    isExpanded ? 'max-w-28 opacity-100 delay-100' : 'max-w-0 opacity-0'
+  }`;
 
   return (
     <>
-      <div className="mt-10 flex flex-col gap-2">
+      <div
+        className={`relative z-50 flex h-screen flex-col gap-2 overflow-hidden bg-gray-100 pt-10 transition-[width,padding] duration-300 ease-in-out ${
+          isExpanded ? 'w-44 items-start px-4' : 'w-full items-center px-0'
+        }`}
+      >
         <button
-          className={`z-50 h-10 w-10 rounded-md bg-[#C00707] text-xl font-bold text-white ${showExperience ? 'hidden' : 'block'}`}
-          onClick={() => setShowExperience((prev) => !prev)}
-          disabled={showExperience}
+          type="button"
+          className={menuButtonClass}
+          aria-expanded={isExpanded}
+          aria-controls="portfolio-modal-menu"
+          aria-label={isExpanded ? 'Collapse modal menu' : 'Expand modal menu'}
+          onClick={() => setIsExpanded((expanded) => !expanded)}
         >
-          Ex
+          <span className="relative h-4 w-4 shrink-0" aria-hidden="true">
+            <FiMenu
+              className={`absolute inset-0 transition-[opacity,transform] duration-200 ${
+                isExpanded ? 'scale-75 opacity-0' : 'scale-100 opacity-100 delay-100'
+              }`}
+            />
+            <FiX
+              className={`absolute inset-0 transition-[opacity,transform] duration-200 ${
+                isExpanded ? 'scale-100 opacity-100 delay-100' : 'scale-75 opacity-0'
+              }`}
+            />
+          </span>
+          <span className={menuLabelClass} aria-hidden="true">
+            Close menu
+          </span>
         </button>
-        <button
-          className={`z-50 flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
-            showCertifications ? 'hidden' : 'block'
-          }`}
-          onClick={() => setShowCertifications((prev) => !prev)}
-          disabled={showCertifications}
-        >
-          <GrCertificate />
-        </button>
-        <button
-          className={`z-50 flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
-            showGitHub ? 'hidden' : 'block'
-          }`}
-          onClick={() => setShowGitHub((prev) => !prev)}
-          disabled={showGitHub}
-        >
-          <FaGithub />
-        </button>
-        <button
-          className={`z-50 flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
-            showFreelance ? 'hidden' : 'block'
-          }`}
-          onClick={() => setShowFreelance((prev) => !prev)}
-          disabled={showFreelance}
-        >
-          Fl
-        </button>
-        <button
-          className={`z-50 flex h-10 w-10 items-center justify-center rounded-md bg-[#C00707] text-xl font-bold text-white ${
-            showChallenges ? 'hidden' : 'block'
-          }`}
-          onClick={() => setShowChallenges((prev) => !prev)}
-          disabled={showChallenges}
-        >
-          <FaGamepad />
-        </button>
+
+        <div id="portfolio-modal-menu" className="flex flex-col items-start gap-2">
+          <button
+            type="button"
+            className={`${menuButtonClass} ${showExperience ? 'hidden' : 'flex'}`}
+            onClick={() => setShowExperience((prev) => !prev)}
+            disabled={showExperience}
+            aria-label="Open experience modal"
+          >
+            <span className="w-4 shrink-0 text-center text-xs" aria-hidden="true">
+              Ex
+            </span>
+            <span className={menuLabelClass} aria-hidden="true">
+              Experience
+            </span>
+          </button>
+          <button
+            type="button"
+            className={`${menuButtonClass} ${showCertifications ? 'hidden' : 'flex'}`}
+            onClick={() => setShowCertifications((prev) => !prev)}
+            disabled={showCertifications}
+            aria-label="Open certifications modal"
+          >
+            <GrCertificate className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span className={menuLabelClass} aria-hidden="true">
+              Certificates
+            </span>
+          </button>
+          <button
+            type="button"
+            className={`${menuButtonClass} ${showGitHub ? 'hidden' : 'flex'}`}
+            onClick={() => setShowGitHub((prev) => !prev)}
+            disabled={showGitHub}
+            aria-label="Open GitHub modal"
+          >
+            <FaGithub className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span className={menuLabelClass} aria-hidden="true">
+              GitHub
+            </span>
+          </button>
+          <button
+            type="button"
+            className={`${menuButtonClass} ${showFreelance ? 'hidden' : 'flex'}`}
+            onClick={() => setShowFreelance((prev) => !prev)}
+            disabled={showFreelance}
+            aria-label="Open freelance modal"
+          >
+            <span className="w-4 shrink-0 text-center text-xs" aria-hidden="true">
+              Fl
+            </span>
+            <span className={menuLabelClass} aria-hidden="true">
+              Freelance
+            </span>
+          </button>
+          <button
+            type="button"
+            className={`${menuButtonClass} ${showChallenges ? 'hidden' : 'flex'}`}
+            onClick={() => setShowChallenges((prev) => !prev)}
+            disabled={showChallenges}
+            aria-label="Open learning challenges modal"
+          >
+            <FaGamepad className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span className={menuLabelClass} aria-hidden="true">
+              Challenges
+            </span>
+          </button>
+        </div>
       </div>
 
       {showExperience && (
@@ -90,7 +158,7 @@ export default function MenuComponent() {
       )}
 
       {(showExperience || showCertifications || showGitHub || showFreelance || showChallenges) && (
-        <div className="fixed inset-0 z-40 bg-black/25" />
+        <div className="fixed inset-0 z-40 bg-[#0a0a0a]/25" />
       )}
     </>
   );

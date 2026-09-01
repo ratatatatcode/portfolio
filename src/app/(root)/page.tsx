@@ -52,7 +52,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <main className="flex min-h-screen w-full flex-col md:flex-row">
-        <section className="hidden h-screen bg-gray-100 md:flex md:w-[5%] md:justify-center">
+        <section className="relative hidden h-screen md:block md:w-[5%]">
           <MenuComponent />
         </section>
         <section className="scrollbar-hide flex w-full flex-col gap-6 overflow-y-auto p-6 md:h-screen md:w-[60%] md:gap-0 md:p-4">

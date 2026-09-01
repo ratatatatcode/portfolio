@@ -24,7 +24,7 @@ export default function FreelanceModalComponent({ showState, setShowState }: Fre
           You can message me directly, and we can work together on your projects.
         </AutoHideHint>
         <div className="flex cursor-move items-start justify-between">
-          <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
+          <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
             <u>FREELANCE SERVICES</u>
           </h2>
           <button className="no-drag" onClick={() => setShowState(false)}>

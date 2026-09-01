@@ -10,7 +10,7 @@ export default function CertificationsComponent() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
+        <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
           <u>CERTIFICATIONS</u>
         </h2>
       </a>

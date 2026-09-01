@@ -14,7 +14,7 @@ export default function OtherProjectsComponent() {
               <p className="text-sm">{project.description}</p>
               {project.github && (
                 <a
-                  className="mt-1 inline-flex items-center gap-1 rounded-sm border bg-black/80 px-3 py-1.5 font-semibold text-white"
+                  className="mt-1 inline-flex items-center gap-1 rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white"
                   href={project.github}
                 >
                   <FaGithub size={16} />

@@ -1,20 +1,14 @@
 import type { Metadata, Viewport } from 'next';
-import { Poppins, Geist } from 'next/font/google';
+import { Geist } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
-const poppins = Poppins({
-  variable: '--font-poppins',
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-});
-
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#FE3905',
+  themeColor: '#27272a',
 };
 
 export const metadata: Metadata = {
@@ -96,7 +90,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={cn('font-sans', geist.variable)}>
-      <body className={`${poppins.variable} scroll-smooth antialiased`}>{children}</body>
+      <body className="scroll-smooth antialiased">{children}</body>
     </html>
   );
 }

@@ -30,7 +30,7 @@ export default function LearningChallengesModalComponent({
         </AutoHideHint>
         <div className="flex cursor-move items-start justify-between">
           <div className="mb-2 flex flex-col items-start justify-center">
-            <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
+            <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
               <u>LEARNING CHALLENGES</u>
             </h2>
             <p className="text-muted-foreground text-xs">

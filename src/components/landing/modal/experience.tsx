@@ -25,7 +25,7 @@ export default function ExperienceModalComponent({
       >
         <AutoHideHint>You can drag this modal and reopen it using the sidebar.</AutoHideHint>
         <div className="flex cursor-move items-start justify-between">
-          <h2 className="text-2xl font-bold text-[#C00707] md:mb-2">
+          <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
             <u>EXPERIENCE</u>
           </h2>
           <button className="no-drag" onClick={() => setShowState(false)}>
