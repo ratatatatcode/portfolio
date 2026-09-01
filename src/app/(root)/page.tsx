@@ -1,24 +1,24 @@
-import MenuComponent from '@/components/landing/modal/menu';
-import IntroductionComponent from '@/components/landing/introduction/introduction';
-import AboutComponent from '@/components/landing/about';
-import SkillsListComponent from '@/components/landing/skills';
-import ExperienceComponent from '@/components/landing/experience';
-import CertificationsComponent from '@/components/landing/certification';
-import GitHubComponent from '@/components/landing/github/github';
-import LiveProjectsComponent from '@/components/landing/projects/liveProjects';
-import OtherProjectsComponent from '@/components/landing/projects/otherProjects';
-import ProjectListComponent from '@/components/landing/projects/projects';
-import AutoHideHint from '@/components/shared/hint';
+import MenuComponent from '@/components/landing/modal/Menu';
+import IntroductionComponent from '@/components/landing/introduction/Introduction';
+import AboutComponent from '@/components/landing/About';
+import SkillsListComponent from '@/components/landing/Skills';
+import ExperienceComponent from '@/components/landing/Experience';
+import CertificationsComponent from '@/components/landing/Certification';
+import GitHubComponent from '@/components/landing/github/GitHub';
+import LiveProjectsComponent from '@/components/landing/projects/LiveProjects';
+import OtherProjectsComponent from '@/components/landing/projects/OtherProjects';
+import ProjectListComponent from '@/components/landing/projects/Projects';
+import AutoHideHint from '@/components/shared/Hint';
+import { siteConfig } from '@/data/siteConfig';
 
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'James Michael Magnaye',
-  jobTitle: 'Full Stack Developer & UI/UX Engineer',
-  url: 'https://magnaye.online',
-  description:
-    'Full stack developer building modern websites, web applications, and AI-powered digital experiences.',
-  sameAs: ['https://github.com/ratatatatcode'],
+  name: siteConfig.owner.fullName,
+  jobTitle: siteConfig.owner.role,
+  url: siteConfig.siteUrl,
+  description: siteConfig.seo.description,
+  sameAs: Object.values(siteConfig.socialLinks),
   knowsAbout: [
     'Full Stack Development',
     'React',
@@ -32,11 +32,11 @@ const personSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'James Magnaye Portfolio',
-  url: 'https://magnaye.online',
+  name: siteConfig.seo.applicationName,
+  url: siteConfig.siteUrl,
   author: {
     '@type': 'Person',
-    name: 'James Michael Magnaye',
+    name: siteConfig.owner.fullName,
   },
 };
 

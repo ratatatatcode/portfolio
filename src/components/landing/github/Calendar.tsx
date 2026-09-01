@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { GitHubCalendar } from 'react-github-calendar';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function GitHubCalendarClient() {
   const [mounted, setMounted] = useState(false);
@@ -13,5 +14,10 @@ export default function GitHubCalendarClient() {
 
   if (!mounted) return null;
 
-  return <GitHubCalendar username="ratatatatcode" year={2026} />;
+  return (
+    <GitHubCalendar
+      username={siteConfig.github.username}
+      year={siteConfig.github.contributionYear}
+    />
+  );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import AutoHideHint from '@/components/shared/hint';
+import AutoHideHint from '@/components/shared/Hint';
 import Draggable from 'react-draggable';
 import Image from 'next/image';
 import { challenges } from '@/data/challenges';

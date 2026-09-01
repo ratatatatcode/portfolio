@@ -1,15 +1,12 @@
 'use client';
 
 import { certifications } from '@/data/certifications';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function CertificationsComponent() {
   return (
     <div className="md:hidden">
-      <a
-        href="https://drive.google.com/drive/folders/16-ggmo0RPa-X_PM_Xk0mKxUjOUnrzWtY?usp=sharing"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href={siteConfig.documents.certifications} target="_blank" rel="noopener noreferrer">
         <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
           <u>CERTIFICATIONS</u>
         </h2>

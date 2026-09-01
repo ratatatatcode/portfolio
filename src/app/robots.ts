@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://magnaye.online/sitemap.xml',
-    host: 'https://magnaye.online',
+    sitemap: `${siteConfig.siteUrl}/sitemap.xml`,
+    host: siteConfig.siteUrl,
   };
 }

@@ -1,10 +1,10 @@
 'use client';
 
-import ExperienceModalComponent from './experience';
-import CertificationsModalComponent from './certification';
-import GitHubModalComponent from './github';
-import FreelanceModalComponent from './freelance';
-import LearningChallengesModalComponent from './challenges';
+import ExperienceModalComponent from './Experience';
+import CertificationsModalComponent from './Certification';
+import GitHubModalComponent from './GitHub';
+import FreelanceModalComponent from './Freelance';
+import LearningChallengesModalComponent from './Challenges';
 import { GrCertificate } from 'react-icons/gr';
 import { FaGithub } from 'react-icons/fa6';
 import { FaGamepad } from 'react-icons/fa';

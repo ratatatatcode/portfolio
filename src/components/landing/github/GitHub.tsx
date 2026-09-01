@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
-import GitHubCalendarClient from './calendar';
+import GitHubCalendarClient from './Calendar';
+import { githubStreakUrl } from '@/data/siteConfig';
 
 export default function GitHubComponent() {
   return (
@@ -14,7 +15,7 @@ export default function GitHubComponent() {
       <div className="flex flex-col gap-2">
         <GitHubCalendarClient />
         <Image
-          src="https://github-readme-streak-stats.herokuapp.com?user=ratatatatcode&theme=dark&hide_border=false"
+          src={githubStreakUrl}
           alt="GitHub Streak"
           width={600}
           height={150}

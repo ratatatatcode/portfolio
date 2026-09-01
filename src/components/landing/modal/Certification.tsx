@@ -1,10 +1,11 @@
 'use client';
 
 import { certifications } from '@/data/certifications';
-import AutoHideHint from '@/components/shared/hint';
+import AutoHideHint from '@/components/shared/Hint';
 import Draggable from 'react-draggable';
 import { IoMdCloseCircle } from 'react-icons/io';
 import { useRef } from 'react';
+import { siteConfig } from '@/data/siteConfig';
 
 type CertificationModalProps = {
   showState: boolean;
@@ -26,11 +27,7 @@ export default function CertificationsModalComponent({
         <div className="shrink-0">
           <AutoHideHint>Click the header to view all certification proofs.</AutoHideHint>
           <div className="flex cursor-move items-start justify-between">
-            <a
-              href="https://drive.google.com/drive/folders/16-ggmo0RPa-X_PM_Xk0mKxUjOUnrzWtY?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={siteConfig.documents.certifications} target="_blank" rel="noopener noreferrer">
               <h2 className="no-drag text-2xl font-bold text-[#0a0a0a] md:mb-2">
                 <u>CERTIFICATIONS</u>
               </h2>

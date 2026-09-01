@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Geist } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
+import { siteConfig } from '@/data/siteConfig';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -12,32 +13,19 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://magnaye.online'),
+  metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: 'Magnaye | Software Developer',
-    template: '%s | James Magnaye',
+    default: siteConfig.seo.title,
+    template: siteConfig.seo.titleTemplate,
   },
-  description:
-    'James Michael Magnaye is a full stack developer and UI/UX-focused creator building modern websites, web applications, and AI-powered digital experiences for clients and startups.',
-  keywords: [
-    'James Magnaye',
-    'James Michael',
-    'Magnaye',
-    'Full Stack Developer',
-    'Next.js Developer',
-    'React Developer',
-    'UI/UX Designer',
-    'Software Developer Philippines',
-    'Freelance Web Developer',
-    'Portfolio Website',
-    'Web Application Developer',
-  ],
-  authors: [{ name: 'James Michael Magnaye' }],
-  creator: 'James Michael Magnaye',
-  publisher: 'James Michael Magnaye',
-  applicationName: 'Magnaye Portfolio',
+  description: siteConfig.seo.description,
+  keywords: [...siteConfig.seo.keywords],
+  authors: [{ name: siteConfig.owner.fullName }],
+  creator: siteConfig.owner.fullName,
+  publisher: siteConfig.owner.fullName,
+  applicationName: siteConfig.seo.applicationName,
   alternates: {
-    canonical: 'https://magnaye.online',
+    canonical: siteConfig.siteUrl,
   },
   robots: {
     index: true,
@@ -54,27 +42,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://magnaye.online',
-    siteName: 'James Magnaye Portfolio',
-    title: 'James Magnaye | Full Stack Developer & UI/UX Engineer',
-    description:
-      'Full stack developer and UI/UX designer creating modern websites, web apps, and AI-powered experiences.',
+    url: siteConfig.siteUrl,
+    siteName: siteConfig.seo.applicationName,
+    title: siteConfig.seo.socialTitle,
+    description: siteConfig.seo.socialDescription,
     images: [
       {
-        url: '/logo/profile.png',
+        url: siteConfig.seo.previewImage,
         width: 1200,
         height: 630,
-        alt: 'James Magnaye portfolio preview',
+        alt: `${siteConfig.owner.displayName} portfolio preview`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'James Magnaye | Full Stack Developer & UI/UX Engineer',
-    description:
-      'Full stack developer and UI/UX-focused designer creating modern websites, web apps, and AI-powered experiences.',
-    creator: '@ratatatatcode',
-    images: ['/logo/profile.png'],
+    title: siteConfig.seo.socialTitle,
+    description: siteConfig.seo.socialDescription,
+    creator: siteConfig.seo.twitterHandle,
+    images: [siteConfig.seo.previewImage],
   },
   icons: {
     icon: '/logo/logo.png',

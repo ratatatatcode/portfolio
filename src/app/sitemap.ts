@@ -1,11 +1,10 @@
 import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://magnaye.online';
-
   return [
     {
-      url: baseUrl,
+      url: siteConfig.siteUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
