@@ -21,10 +21,19 @@ export default function CertificationsComponent() {
         {certifications.map((certification, idx) => (
           <div key={idx} className="my-1">
             <p className="font-semibold">{certification.title}</p>
-            <p>{certification.issuer}</p>
-            <p className="text-muted-foreground text-[0.7rem]">{certification.date}</p>
+            <div className="mb-2 flex items-baseline justify-between">
+              <p className="italic">{certification.issuer}</p>
+              <p className="text-muted-foreground shrink-0 font-sans text-[0.7rem]">
+                {certification.date}
+              </p>
+            </div>
+            {certification.description && (
+              <p className="font-sans text-sm">{certification.description}</p>
+            )}
             {certification.detailedDesc.map((desc, idx) => (
-              <p key={idx}>• {desc}</p>
+              <p key={idx} className="font-sans">
+                • {desc}
+              </p>
             ))}
           </div>
         ))}

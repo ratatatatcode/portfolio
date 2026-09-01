@@ -22,28 +22,30 @@ export default function LearningChallengesModalComponent({
     <Draggable nodeRef={nodeRef} handle=".drag-handle" cancel=".no-drag">
       <div
         ref={nodeRef}
-        className={`scrollbar-hide drag-handle top-1/6 left-1/4 z-60 h-100 w-140 overflow-y-scroll rounded-md border border-gray-400 bg-gray-50 p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
+        className={`drag-handle top-1/6 left-1/4 z-60 flex h-100 w-140 flex-col overflow-hidden rounded-md border border-gray-400 bg-gray-50 p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
       >
-        <AutoHideHint>
-          Click the images to be directed to their respective links, where you can try them out as
-          well.
-        </AutoHideHint>
-        <div className="flex cursor-move items-start justify-between">
-          <div className="mb-2 flex flex-col items-start justify-center">
-            <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
-              <u>LEARNING CHALLENGES</u>
-            </h2>
-            <p className="text-muted-foreground text-xs">
-              These challenges may not carry the same weight as certifications, but they demonstrate
-              my dedication to learning through practice.
-            </p>
+        <div className="shrink-0">
+          <AutoHideHint>
+            Click the images to be directed to their respective links, where you can try them out as
+            well.
+          </AutoHideHint>
+          <div className="flex cursor-move items-start justify-between">
+            <div className="mb-2 flex flex-col items-start justify-center">
+              <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
+                <u>LEARNING CHALLENGES</u>
+              </h2>
+              <p className="text-muted-foreground font-sans text-xs">
+                These challenges may not carry the same weight as certifications, but they
+                demonstrate my dedication to learning through practice.
+              </p>
+            </div>
+            <button className="no-drag" onClick={() => setShowState(false)}>
+              <IoMdCloseCircle size={20} />
+            </button>
           </div>
-          <button className="no-drag" onClick={() => setShowState(false)}>
-            <IoMdCloseCircle size={20} />
-          </button>
+          <hr className="mb-2 border-gray-400" />
         </div>
-        <hr className="mb-2 border-gray-400" />
-        <div className="no-drag flex flex-col items-center justify-center gap-2">
+        <div className="scrollbar-hide no-drag flex min-h-0 flex-1 flex-col items-center gap-2 overflow-y-auto">
           {challenges.map((challenge) => (
             <a href={challenge.link} key={challenge.id}>
               <Image

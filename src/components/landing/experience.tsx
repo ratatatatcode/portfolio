@@ -10,7 +10,7 @@ export default function ExperienceComponent() {
       </div>
       <div className="flex flex-col gap-2">
         {experiences.map((experience, idx) => (
-          <div key={idx} className="my-1 text-base">
+          <div key={idx} className="my-1 font-sans text-base">
             <p className="font-semibold">{experience.title}</p>
             <p className="text-muted-foreground text-[0.7rem]">{experience.date}</p>
             <p>• {experience.firstDesc}</p>
