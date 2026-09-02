@@ -14,6 +14,15 @@ export const liveProjects = [
 
 export const projects = [
   {
+    id: 8,
+    title: 'Kodo',
+    src: '/projects/kodo.mp4',
+    description:
+      'An offline learning platform built with React Native for learning C++. The free version covers fundamentals, operators, and loops.',
+    github: '',
+    apk: 'https://drive.google.com/drive/folders/1nxe-De9OM1qzaw2Bu0WoesNdinK3kZJu?usp=sharing',
+  },
+  {
     id: 1,
     title: 'CodeChal',
     src: '/projects/codechal.mp4',

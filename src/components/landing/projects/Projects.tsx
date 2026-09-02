@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { projects } from '@/data/projects';
-import { FaGithub } from 'react-icons/fa6';
+import { FaAndroid, FaGithub } from 'react-icons/fa6';
 
 export default function ProjectListComponent() {
   return (
@@ -10,6 +10,17 @@ export default function ProjectListComponent() {
           <h3 className="text-lg font-bold">{project.title}</h3>
           <p className="text-sm">{project.description}</p>
           <div className="justif-center my-2 flex flex-wrap gap-0.5">
+            {project.apk && (
+              <a
+                className="inline-flex items-center gap-1 rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white"
+                href={project.apk}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaAndroid size={16} />
+                <span className="text-xs">Get APK</span>
+              </a>
+            )}
             <a
               className="inline-flex items-center gap-1 rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white"
               href={project.github}
