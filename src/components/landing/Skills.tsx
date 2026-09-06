@@ -1,6 +1,15 @@
 import BadgeComponent from '../shared/Badge';
 import { FaHtml5, FaJs, FaNodeJs, FaReact, FaFigma, FaCode, FaRobot } from 'react-icons/fa';
-import { SiNextdotjs, SiExpress, SiMysql, SiFirebase, SiTailwindcss, SiCss } from 'react-icons/si';
+import {
+  SiNextdotjs,
+  SiExpress,
+  SiMysql,
+  SiFirebase,
+  SiTailwindcss,
+  SiCss,
+  SiMake,
+  SiOpenai,
+} from 'react-icons/si';
 import { DiPhotoshop } from 'react-icons/di';
 import { SiLuau } from 'react-icons/si';
 
@@ -21,6 +30,8 @@ export default function SkillsListComponent() {
     { text: 'Luau | Learning', icon: <SiLuau /> },
     { text: 'Traditional Development', icon: <FaCode /> },
     { text: 'AI-assisted Development', icon: <FaRobot /> },
+    { text: 'AI Workflow Automation', icon: <SiMake /> },
+    { text: 'OpenAI API Integration', icon: <SiOpenai /> },
   ];
 
   return (
