@@ -12,6 +12,16 @@ export const liveProjects = [
   },
 ];
 
+export const automationWorkflows = [
+  {
+    id: 1,
+    title: 'Appointment Email Automation',
+    src: '/projects/appointment-automation.mkv',
+    description:
+      'Automates incoming appointment emails using Gmail, OpenAI, Make.com, and Google Sheets. The workflow classifies requests, validates required details, extracts relevant information, and logs the results automatically.',
+  },
+];
+
 export const projects = [
   {
     id: 8,

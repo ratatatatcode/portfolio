@@ -1,51 +1,58 @@
 import Link from 'next/link';
+import { Fragment } from 'react';
 import { projects } from '@/data/projects';
 import { FaAndroid, FaGithub } from 'react-icons/fa6';
+
+import AutomationWorkflowsComponent from './AutomationWorkflows';
 
 export default function ProjectListComponent() {
   return (
     <>
       {projects.map((project) => (
-        <div key={project.id} className="h-auto w-full rounded-sm border border-gray-400 p-4">
-          <h3 className="text-lg font-bold">{project.title}</h3>
-          <p className="text-sm">{project.description}</p>
-          <div className="justif-center my-2 flex flex-wrap gap-0.5">
-            {project.apk && (
+        <Fragment key={project.id}>
+          <div className="h-auto w-full rounded-sm border border-gray-400 p-4">
+            <h3 className="text-lg font-bold">{project.title}</h3>
+            <p className="text-sm">{project.description}</p>
+            <div className="justif-center my-2 flex flex-wrap gap-0.5">
+              {project.apk && (
+                <a
+                  className="inline-flex items-center gap-1 rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white"
+                  href={project.apk}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaAndroid size={16} />
+                  <span className="text-xs">Get APK</span>
+                </a>
+              )}
               <a
                 className="inline-flex items-center gap-1 rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white"
-                href={project.apk}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={project.github}
               >
-                <FaAndroid size={16} />
-                <span className="text-xs">Get APK</span>
+                <FaGithub size={16} />
+                <span className="text-xs">{project.github ? 'Public' : 'Private'}</span>
               </a>
-            )}
-            <a
-              className="inline-flex items-center gap-1 rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white"
-              href={project.github}
-            >
-              <FaGithub size={16} />
-              <span className="text-xs">{project.github ? 'Public' : 'Private'}</span>
-            </a>
-            {project.position && (
-              <p className="inline-flex items-center rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white">
-                <span className="text-xs">{project.position}</span>
-              </p>
-            )}
-            {project.role && (
-              <p className="inline-flex items-center rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white">
-                <span className="text-xs">{project.role}</span>
-              </p>
-            )}
+              {project.position && (
+                <p className="inline-flex items-center rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white">
+                  <span className="text-xs">{project.position}</span>
+                </p>
+              )}
+              {project.role && (
+                <p className="inline-flex items-center rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white">
+                  <span className="text-xs">{project.role}</span>
+                </p>
+              )}
+            </div>
+            <hr className="mb-2 border-gray-400" />
+            <Link href={project.src} target="_blank" rel="noopener noreferrer">
+              <video autoPlay loop muted playsInline preload="metadata">
+                <source src={project.src} type="video/mp4" />
+              </video>
+            </Link>
           </div>
-          <hr className="mb-2 border-gray-400" />
-          <Link href={project.src} target="_blank" rel="noopener noreferrer">
-            <video autoPlay loop muted playsInline preload="metadata">
-              <source src={project.src} type="video/mp4" />
-            </video>
-          </Link>
-        </div>
+
+          {project.title === 'Kodo' && <AutomationWorkflowsComponent />}
+        </Fragment>
       ))}
     </>
   );
