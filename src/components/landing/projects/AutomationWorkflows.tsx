@@ -5,7 +5,7 @@ import { automationWorkflows } from '@/data/projects';
 export default function AutomationWorkflowsComponent() {
   return (
     <section className="h-auto w-full rounded-sm border border-gray-400 p-4">
-      <h3 className="text-lg font-bold">AI Automation Workflows</h3>
+      <h3 className="text-lg font-bold">AI Workflow Automations</h3>
 
       <hr className="my-2 border-gray-400" />
 
