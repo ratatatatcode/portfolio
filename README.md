@@ -186,7 +186,18 @@ curl -X POST https://your-domain.example/api/contact \
   -d '{"name":"Test User","email":"test@example.com","project":"Other","message":"Deployment test"}'
 ```
 
-## 8. Troubleshooting
+## 8. Contact-form security
+
+The contact endpoint includes lightweight protections that do not require another service:
+
+- A hidden honeypot field rejects simple automated submissions.
+- The API enforces request and field-size limits.
+- The API accepts JSON requests only and rejects malformed JSON.
+- The endpoint allows up to five requests per client address per hour and returns `429` afterward.
+
+The rate limiter is intentionally best-effort. Vercel Functions can run in multiple instances, so this in-memory limit is not a guaranteed global limit. It reduces casual spam now, but it is not a defense against a distributed or volumetric DDoS attack. Keep monitoring the Vercel function logs and SMTP provider usage.
+
+## 9. Troubleshooting
 
 ### `405` on `GET /api/contact`
 
@@ -209,9 +220,23 @@ The variables were found, but the SMTP provider rejected the connection or messa
 
 Check spam and confirm that `CONTACT_EMAIL` is the intended receiving address. The `from` address is the authenticated SMTP account and the visitor's address is used as `replyTo`, which is the safer SMTP configuration.
 
-## 9. Custom domain
+## 10. Custom domain
 
 In Vercel, open the project and go to **Settings → Domains → Add**. Enter your domain and follow the DNS instructions Vercel provides. After the domain is active, update `siteUrl` in `src/data/siteConfig.ts` and deploy again so metadata, sitemap, and robots URLs use the production domain.
+
+## 11. Add Cloudflare later for stronger protection
+
+When the site receives more traffic or spam, Cloudflare can add edge-level filtering before requests reach Vercel. This is a later infrastructure step; the current contact form does not require Cloudflare to work.
+
+1. Add the domain to [Cloudflare](https://dash.cloudflare.com/).
+2. At your domain registrar, replace the domain's nameservers with the two Cloudflare nameservers provided for your zone.
+3. In **Cloudflare -> DNS**, add the DNS records that Vercel shows in **Project -> Settings -> Domains**. Start with the proxy disabled while verifying the domain.
+4. Confirm the domain works in Vercel, then enable the orange-cloud proxy for the web records in Cloudflare.
+5. In **Cloudflare -> SSL/TLS**, use **Full (strict)** after Vercel has issued the domain certificate. Do not use Flexible SSL.
+6. Add a Cloudflare WAF custom rule or rate-limit rule for `POST /api/contact`. Start with a conservative limit such as five requests per IP per hour and review false positives before tightening it.
+7. If needed later, add Cloudflare Turnstile to the form and validate its token in `src/app/api/contact/route.ts` on the server. Never rely on the browser widget without server-side validation.
+
+Cloudflare protects traffic sent through the proxied custom domain. The underlying Vercel deployment URL may still be reachable directly, so keep Vercel project access controlled and use any available Vercel firewall or deployment-protection features as an additional layer.
 
 ## Scripts
 

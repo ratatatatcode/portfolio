@@ -47,11 +47,19 @@ export default function ContactForm() {
       </div>
 
       <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
+        <input
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute -left-[9999px] h-px w-px overflow-hidden"
+        />
         <label className="grid gap-1.5 text-sm font-medium text-slate-700">
           Name
           <input
             name="name"
             required
+            maxLength={100}
             className="rounded-lg border border-slate-300 bg-white px-3 py-2.5 transition outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
           />
         </label>
@@ -61,6 +69,7 @@ export default function ContactForm() {
             type="email"
             name="email"
             required
+            maxLength={254}
             className="rounded-lg border border-slate-300 bg-white px-3 py-2.5 transition outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
           />
         </label>
@@ -91,6 +100,7 @@ export default function ContactForm() {
           <textarea
             name="message"
             required
+            maxLength={5000}
             rows={5}
             className="resize-y rounded-lg border border-slate-300 bg-white px-3 py-2.5 transition outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
           />
