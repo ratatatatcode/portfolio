@@ -5,13 +5,12 @@ import { githubStreakUrl } from '@/data/siteConfig';
 
 export default function GitHubComponent() {
   return (
-    <div className="md:hidden">
-      <div className="flex cursor-move items-center justify-between">
-        <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
-          <u>GITHUB INFORMATION</u>
-        </h2>
+    <section className="border-t border-slate-300 pt-6 md:hidden">
+      <div className="mb-4">
+        <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-blue-700">OPEN SOURCE ACTIVITY</p>
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900">GitHub</h2>
+        <p className="mt-1 text-sm leading-6 text-slate-600">A snapshot of my coding practice, experiments, and steady progress.</p>
       </div>
-      <hr className="mb-2 border-gray-400" />
       <div className="flex flex-col gap-2">
         <GitHubCalendarClient />
         <Image
@@ -23,6 +22,6 @@ export default function GitHubComponent() {
           unoptimized
         />
       </div>
-    </div>
+    </section>
   );
 }

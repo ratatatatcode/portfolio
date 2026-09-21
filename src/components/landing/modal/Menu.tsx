@@ -12,7 +12,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 
 export default function MenuComponent() {
-  const [showExperience, setShowExperience] = useState(true);
+  const [showExperience, setShowExperience] = useState(false);
   const [showCertifications, setShowCertifications] = useState(false);
   const [showGitHub, setShowGitHub] = useState(false);
   const [showFreelance, setShowFreelance] = useState(false);
@@ -26,7 +26,7 @@ export default function MenuComponent() {
     return () => window.clearTimeout(collapseTimer);
   }, [isExpanded]);
 
-  const menuButtonClass = `z-60 flex h-9 items-center gap-2 overflow-hidden rounded-md bg-[#0a0a0a] text-sm font-semibold text-white transition-[width,padding] duration-300 ease-in-out ${
+  const menuButtonClass = `z-60 flex h-9 items-center gap-2 overflow-hidden rounded-md bg-blue-600 text-sm font-semibold text-white transition-[width,padding] duration-300 ease-in-out ${
     isExpanded ? 'w-36 px-3' : 'w-9 px-2.5'
   }`;
   const menuLabelClass = `whitespace-nowrap transition-[max-width,opacity] duration-200 ease-in-out ${
@@ -36,7 +36,7 @@ export default function MenuComponent() {
   return (
     <>
       <div
-        className={`relative z-60 flex h-screen flex-col gap-2 overflow-hidden border-r border-gray-300 bg-gray-100 pt-10 transition-[width,padding] duration-300 ease-in-out ${
+        className={`relative z-60 flex h-screen flex-col gap-2 overflow-hidden border-r border-blue-100 bg-blue-50/70 pt-10 transition-[width,padding] duration-300 ease-in-out ${
           isExpanded ? 'w-44 items-start px-4' : 'w-full items-center px-0'
         }`}
       >
@@ -158,7 +158,7 @@ export default function MenuComponent() {
       )}
 
       {(showExperience || showCertifications || showGitHub || showFreelance || showChallenges) && (
-        <div className="fixed inset-0 z-40 bg-[#0a0a0a]/25 backdrop-blur-sm" />
+        <div className="fixed inset-0 z-40 bg-slate-950/20 backdrop-blur-sm" />
       )}
     </>
   );

@@ -2,11 +2,11 @@ import { experiences } from '@/data/experience';
 
 export default function ExperienceComponent() {
   return (
-    <div className="md:hidden">
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
-          <u>EXPERIENCE</u>
-        </h2>
+    <section className="border-t border-slate-300 pt-6 md:hidden">
+      <div className="mb-4">
+        <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-blue-700">WORK HISTORY</p>
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900">Experience</h2>
+        <p className="mt-1 text-sm leading-6 text-slate-600">Roles and projects that shaped how I approach building useful software.</p>
       </div>
       <div className="flex flex-col gap-2">
         {experiences.map((experience, idx) => (
@@ -19,6 +19,6 @@ export default function ExperienceComponent() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

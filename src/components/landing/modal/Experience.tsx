@@ -1,7 +1,6 @@
 'use client';
 
 import { experiences } from '@/data/experience';
-import AutoHideHint from '@/components/shared/Hint';
 import Draggable from 'react-draggable';
 import { IoMdCloseCircle } from 'react-icons/io';
 import { useRef } from 'react';
@@ -21,19 +20,20 @@ export default function ExperienceModalComponent({
     <Draggable nodeRef={nodeRef} handle=".drag-handle" cancel=".no-drag">
       <div
         ref={nodeRef}
-        className={`drag-handle top-1/2 left-1/2 z-100 flex h-100 w-140 flex-col overflow-hidden rounded-md border border-gray-400 bg-gray-50 p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
+        className={`drag-handle fixed left-4 top-4 z-100 flex max-h-[calc(100vh-2rem)] w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-xl border border-blue-100 bg-white p-5 shadow-xl shadow-slate-200/50 md:top-1/2 md:left-1/2 md:h-100 md:w-140 ${showState ? 'flex' : 'hidden'}`}
       >
         <div className="shrink-0">
-          <AutoHideHint>You can drag this modal and reopen it using the sidebar.</AutoHideHint>
-          <div className="flex cursor-move items-start justify-between">
-            <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
-              <u>EXPERIENCE</u>
-            </h2>
-            <button className="no-drag" onClick={() => setShowState(false)}>
+          <div className="flex cursor-move items-start justify-between gap-4">
+            <div>
+              <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-blue-700">WORK HISTORY</p>
+              <h2 className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">Experience</h2>
+              <p className="mt-1 max-w-xl text-sm leading-6 text-slate-600">Roles and projects that shaped how I approach building useful software.</p>
+            </div>
+            <button className="no-drag rounded-md p-1 text-slate-500 transition hover:bg-blue-50 hover:text-blue-700" onClick={() => setShowState(false)}>
               <IoMdCloseCircle size={20} />
             </button>
           </div>
-          <hr className="mb-2 border-gray-400" />
+          <hr className="mb-3 border-blue-100" />
         </div>
         <div className="scrollbar-hide no-drag flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto">
           {experiences.map((experience, idx) => (

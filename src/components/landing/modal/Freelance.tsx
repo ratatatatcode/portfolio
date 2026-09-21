@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import AutoHideHint from '@/components/shared/Hint';
 import Draggable from 'react-draggable';
 import { IoMdCloseCircle } from 'react-icons/io';
 import { useRef } from 'react';
@@ -18,21 +17,20 @@ export default function FreelanceModalComponent({ showState, setShowState }: Fre
     <Draggable nodeRef={nodeRef} handle=".drag-handle" cancel=".no-drag">
       <div
         ref={nodeRef}
-        className={`drag-handle top-1/5 left-3/4 z-70 flex max-h-[80vh] w-120 flex-col overflow-hidden rounded-md border border-gray-400 bg-gray-50 p-4 shadow-lg ${showState ? 'md:fixed' : 'md:hidden'}`}
+        className={`drag-handle fixed left-4 top-4 z-70 flex max-h-[calc(100vh-2rem)] w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-xl border border-blue-100 bg-white p-5 shadow-xl shadow-slate-200/50 md:top-1/5 md:left-3/4 md:w-120 ${showState ? 'flex' : 'hidden'}`}
       >
         <div className="shrink-0">
-          <AutoHideHint>
-            You can message me directly, and we can work together on your projects.
-          </AutoHideHint>
-          <div className="flex cursor-move items-start justify-between">
-            <h2 className="text-2xl font-bold text-[#0a0a0a] md:mb-2">
-              <u>FREELANCE SERVICES</u>
-            </h2>
-            <button className="no-drag" onClick={() => setShowState(false)}>
+          <div className="flex cursor-move items-start justify-between gap-4">
+            <div>
+              <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-blue-700">AVAILABLE FOR PROJECTS</p>
+              <h2 className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">Freelance services</h2>
+              <p className="mt-1 max-w-xl text-sm leading-6 text-slate-600">Practical websites, software, and guidance for ideas that need a clear starting point.</p>
+            </div>
+            <button className="no-drag rounded-md p-1 text-slate-500 transition hover:bg-blue-50 hover:text-blue-700" onClick={() => setShowState(false)}>
               <IoMdCloseCircle size={20} />
             </button>
           </div>
-          <hr className="mb-2 border-gray-400" />
+          <hr className="mb-3 border-blue-100" />
         </div>
         <div className="scrollbar-hide no-drag flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto">
           <Image

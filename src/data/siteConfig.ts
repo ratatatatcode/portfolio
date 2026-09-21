@@ -8,11 +8,21 @@ export const siteConfig = {
     role: 'Full Stack Developer & UI/UX Engineer',
   },
   introduction: {
-    eyebrowSuffix: 'README.md',
-    lead: 'Computer Science graduate with',
-    emphasis: 'hands-on experience in full stack development and UI/UX design,',
+    eyebrowSuffix: 'about-me.md',
+    headline: 'I build practical digital solutions for growing ideas.',
+    lead: 'I build practical websites and digital solutions',
+    emphasis: 'for ideas that are ready to move forward.',
     summary:
-      'gained through academic work and personal projects. Experienced in traditional and AI-assisted development.',
+      'With a focus on clear user experiences, reliable software, and thoughtful AI-assisted workflows.',
+  },
+  serviceCta: {
+    eyebrow: 'NEED A DIGITAL SOLUTION?',
+    title: 'Have an idea, but not sure where to start?',
+    cleanDescription:
+      "You don't need to hire a full IT team to get moving. If you have an idea or simply need guidance on the right prompts, tools, and setup, I can help you plan it and turn it into something useful.",
+    description:
+      "You don't need to hire a full IT team to get moving. If you have an idea—or simply need guidance on the right prompts, tools, and setup—I can help you plan it and turn it into something useful.",
+    actionLabel: "Let's talk",
   },
   about: {
     firstLead: 'a quick learner who enjoys turning ideas into reality,',

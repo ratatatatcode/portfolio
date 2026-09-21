@@ -10,13 +10,13 @@ export default function ProjectListComponent() {
     <>
       {projects.map((project) => (
         <Fragment key={project.id}>
-          <div className="h-auto w-full rounded-sm border border-gray-400 p-4">
-            <h3 className="text-lg font-bold">{project.title}</h3>
-            <p className="text-sm">{project.description}</p>
-            <div className="justif-center my-2 flex flex-wrap gap-0.5">
+          <div className="h-auto w-full rounded-xl border border-slate-200 bg-white p-4">
+            <h3 className="text-lg font-bold text-slate-900">{project.title}</h3>
+            <p className="mt-1 text-sm leading-6 text-slate-600">{project.description}</p>
+            <div className="my-3 flex flex-wrap gap-1.5">
               {project.apk && (
                 <a
-                  className="inline-flex items-center gap-1 rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white"
+                  className="inline-flex items-center gap-1 rounded-md bg-slate-900 px-3 py-1.5 font-semibold text-white"
                   href={project.apk}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -26,26 +26,26 @@ export default function ProjectListComponent() {
                 </a>
               )}
               <a
-                className="inline-flex items-center gap-1 rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white"
+                className="inline-flex items-center gap-1 rounded-md bg-slate-900 px-3 py-1.5 font-semibold text-white"
                 href={project.github}
               >
                 <FaGithub size={16} />
                 <span className="text-xs">{project.github ? 'Public' : 'Private'}</span>
               </a>
               {project.position && (
-                <p className="inline-flex items-center rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white">
+                <p className="inline-flex items-center rounded-md bg-slate-100 px-3 py-1.5 font-semibold text-slate-700">
                   <span className="text-xs">{project.position}</span>
                 </p>
               )}
               {project.role && (
-                <p className="inline-flex items-center rounded-sm border bg-[#0a0a0a] px-3 py-1.5 font-semibold text-white">
+                <p className="inline-flex items-center rounded-md bg-slate-100 px-3 py-1.5 font-semibold text-slate-700">
                   <span className="text-xs">{project.role}</span>
                 </p>
               )}
             </div>
-            <hr className="mb-2 border-gray-400" />
+            <hr className="mb-3 border-slate-200" />
             <Link href={project.src} target="_blank" rel="noopener noreferrer">
-              <video autoPlay loop muted playsInline preload="metadata">
+              <video className="rounded-lg border border-slate-200" autoPlay loop muted playsInline preload="metadata">
                 <source src={project.src} type="video/mp4" />
               </video>
             </Link>
