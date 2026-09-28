@@ -17,15 +17,16 @@ export default function LiveProjectsComponent() {
             <p className="mt-1 text-sm leading-6 text-slate-600">{project.description}</p>
             <div className="my-3 flex flex-wrap gap-1.5">
               {project.website && (
-                <a
-                  className="inline-flex items-center gap-1 rounded-md bg-slate-900 px-3 py-1.5 font-semibold text-white"
-                  href={project.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  className="inline-flex cursor-not-allowed items-center gap-1 rounded-md bg-slate-100 px-3 py-1.5 font-semibold text-slate-500"
+                  type="button"
+                  disabled
+                  title="Lyrica's backend is currently offline"
+                  aria-label="Lyrica backend is currently offline"
                 >
                   <Globe2 size={16} />
-                  <span className="text-xs">Website</span>
-                </a>
+                  <span className="text-xs">Backend offline</span>
+                </button>
               )}
               {project.position && (
                 <p className="inline-flex items-center rounded-md bg-slate-100 px-3 py-1.5 font-semibold text-slate-700">
