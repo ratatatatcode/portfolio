@@ -17,11 +17,11 @@ export const siteConfig = {
   },
   serviceCta: {
     eyebrow: 'NEED A DIGITAL SOLUTION?',
-    title: 'Have an idea, but not sure where to start?',
+    title: 'Have an idea? Let’s get started.',
     cleanDescription:
-      "You don't need to hire a full IT team to get moving. If you have an idea or simply need guidance on the right prompts, tools, and setup, I can help you plan it and turn it into something useful.",
+      "You don't need a full IT team to begin. I can help you choose the right tools and turn your idea into something useful.",
     description:
-      "You don't need to hire a full IT team to get moving. If you have an idea—or simply need guidance on the right prompts, tools, and setup—I can help you plan it and turn it into something useful.",
+      "You don't need a full IT team to begin. I can help you choose the right tools and turn your idea into something useful.",
     actionLabel: "Let's talk",
   },
   about: {

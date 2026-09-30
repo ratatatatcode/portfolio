@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 export default function IntroductionComponent() {
   return (
-    <div className="relative z-10 w-full rounded-2xl border border-blue-100 bg-white p-5 md:mt-5 md:p-7">
-      <p className="mb-3 text-xs font-semibold tracking-[0.18em] text-blue-700">
+    <div className="relative z-10 w-full rounded-2xl border border-brand-soft bg-white p-5 md:mt-5 md:p-7">
+      <p className="mb-3 text-xs font-semibold tracking-[0.18em] text-brand-strong">
         {siteConfig.owner.username}/<u>{siteConfig.introduction.eyebrowSuffix}</u>
       </p>
       <Image
@@ -14,29 +14,29 @@ export default function IntroductionComponent() {
         alt={`${siteConfig.owner.displayName} profile photo`}
         width={64}
         height={64}
-        className="absolute top-5 right-5 hidden h-16 w-16 rounded-full border-4 border-white object-cover ring-1 ring-blue-100 md:top-7 md:right-7 md:block"
+        className="absolute top-5 right-5 hidden h-16 w-16 rounded-full border-4 border-white object-cover ring-1 ring-brand-soft md:top-7 md:right-7 md:block"
       />
-      <h1 className="max-w-2xl text-3xl leading-tight font-bold tracking-tight text-slate-900 md:pr-24 md:text-5xl">
+      <h1 className="max-w-2xl text-3xl leading-tight font-bold tracking-tight text-brand-dark md:pr-24 md:text-4xl">
         {siteConfig.introduction.headline}
       </h1>
-      <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
+      <p className="mt-4 max-w-2xl text-sm leading-6 text-brand-dark/70">
         {siteConfig.introduction.lead}&nbsp;
-        <strong className="text-slate-900">{siteConfig.introduction.emphasis}</strong>
+        <strong className="text-brand-dark">{siteConfig.introduction.emphasis}</strong>
         &nbsp;{siteConfig.introduction.summary}
       </p>
-      <div className="mt-7 rounded-xl border border-amber-200 bg-amber-50/70 p-4 md:p-5">
-        <p className="text-[10px] font-bold tracking-[0.2em] text-amber-800">
+      <div className="mt-7 rounded-xl bg-gradient-to-br from-brand-orange to-brand-strong p-4 text-white md:p-5">
+        <p className="text-[10px] font-bold tracking-[0.2em] text-white">
           {siteConfig.serviceCta.eyebrow}
         </p>
-        <h2 className="mt-2 text-xl font-bold tracking-tight text-slate-900 md:text-2xl">
+        <h2 className="mt-2 text-xl font-bold tracking-tight text-white md:text-2xl">
           {siteConfig.serviceCta.title}
         </h2>
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+        <p className="mt-2 max-w-2xl text-sm leading-6 text-white">
           {siteConfig.serviceCta.cleanDescription}
         </p>
         <a
           href="#contact"
-          className="mt-4 inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+          className="mt-4 inline-flex items-center gap-2 rounded-md bg-brand-dark px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           {siteConfig.serviceCta.actionLabel}
           <Mail size={16} aria-hidden="true" />

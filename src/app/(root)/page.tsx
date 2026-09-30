@@ -39,6 +39,21 @@ const websiteSchema = {
   },
 };
 
+function ProjectsSection({ className = '', id }: { className?: string; id?: string }) {
+  return (
+    <section id={id} className={`flex flex-col gap-4 ${className}`}>
+      <div>
+        <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-brand-strong">SELECTED WORK</p>
+        <h2 className="text-2xl font-bold tracking-tight text-brand-dark">Projects</h2>
+        <p className="mt-1 text-sm leading-5 text-brand-dark/60">A few things I have built, shipped, and explored.</p>
+      </div>
+      <LiveProjectsComponent />
+      <ProjectListComponent />
+      <OtherProjectsComponent />
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -51,26 +66,20 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <main className="flex min-h-screen w-full flex-col md:flex-row">
-        <section className="relative hidden h-screen md:block md:w-[5%]">
-          <MenuComponent />
-        </section>
-        <section className="scrollbar-hide scroll-smooth flex w-full flex-col gap-6 overflow-y-auto p-6 md:h-screen md:w-[60%] md:gap-0 md:p-4">
+        <MenuComponent />
+        <section className="scrollbar-hide scroll-smooth flex w-full flex-col gap-6 overflow-y-auto p-6 md:h-screen md:min-w-0 md:flex-1 md:gap-0 md:p-4">
           <IntroductionComponent />
-          <ContactForm />
           <SkillsListComponent />
-          <ExperienceComponent />
+          <ExperienceComponent className="border-t border-brand-dark/20 pt-6 md:hidden" />
           <CertificationsComponent />
           <GitHubComponent />
+          <ProjectsSection className="pt-5 md:hidden" id="projects-mobile" />
+          <ContactForm />
         </section>
-        <section id="projects" className="scrollbar-hide flex h-screen w-full flex-col gap-4 overflow-y-auto p-6 pt-4 md:w-[35%] md:gap-5 md:p-4 md:pt-0">
-          <div className="mt-4 w-full border-b border-slate-300 pb-2 md:mt-5">
-            <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-blue-700">SELECTED WORK</p>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">Projects</h2>
-            <p className="mt-1 text-sm leading-5 text-slate-500">A few things I have built, shipped, and explored.</p>
-          </div>
-          <LiveProjectsComponent />
-          <ProjectListComponent />
-          <OtherProjectsComponent />
+        <section className="scrollbar-hide hidden h-screen w-[35%] shrink-0 overflow-y-auto px-4 pt-9 pb-4 md:block lg:w-[30%] xl:w-[35%]">
+          <p className="mb-4 text-xs font-bold tracking-[0.18em] text-brand-strong">EXPERIENCE &amp; PROJECTS</p>
+          <ExperienceComponent />
+          <ProjectsSection className="mt-8" id="projects" />
         </section>
       </main>
     </>

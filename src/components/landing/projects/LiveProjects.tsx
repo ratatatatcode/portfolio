@@ -5,20 +5,20 @@ import { liveProjects } from '@/data/projects';
 
 export default function LiveProjectsComponent() {
   return (
-    <div className="h-auto w-full rounded-xl border border-slate-200 bg-white p-4">
-      <h3 className="text-lg font-bold text-slate-900">Live Projects</h3>
+    <div className="h-auto w-full rounded-xl border border-brand-dark/10 bg-white p-4">
+      <h3 className="text-lg font-bold text-brand-dark">Live Projects</h3>
 
-      <hr className="my-3 border-slate-200" />
+      <hr className="my-3 border-brand-dark/10" />
 
       <div className="flex flex-col gap-3">
         {liveProjects.map((project) => (
           <div key={project.id}>
-            <h3 className="text-lg font-bold text-slate-900">{project.title}</h3>
-            <p className="mt-1 text-sm leading-6 text-slate-600">{project.description}</p>
+            <h3 className="text-lg font-bold text-brand-dark">{project.title}</h3>
+            <p className="mt-1 text-sm leading-6 text-brand-dark/70">{project.description}</p>
             <div className="my-3 flex flex-wrap gap-1.5">
               {project.website && (
                 <button
-                  className="inline-flex cursor-not-allowed items-center gap-1 rounded-md bg-slate-100 px-3 py-1.5 font-semibold text-slate-500"
+                  className="inline-flex cursor-not-allowed items-center gap-1 rounded-md bg-background px-3 py-1.5 font-semibold text-brand-dark/60"
                   type="button"
                   disabled
                   title="Lyrica's backend is currently offline"
@@ -29,19 +29,19 @@ export default function LiveProjectsComponent() {
                 </button>
               )}
               {project.position && (
-                <p className="inline-flex items-center rounded-md bg-slate-100 px-3 py-1.5 font-semibold text-slate-700">
+                <p className="inline-flex items-center rounded-md bg-background px-3 py-1.5 font-semibold text-brand-dark/80">
                   <span className="text-xs">{project.position}</span>
                 </p>
               )}
               {project.role && (
-                <p className="inline-flex items-center rounded-md bg-slate-100 px-3 py-1.5 font-semibold text-slate-700">
+                <p className="inline-flex items-center rounded-md bg-background px-3 py-1.5 font-semibold text-brand-dark/80">
                   <span className="text-xs">{project.role}</span>
                 </p>
               )}
             </div>
-            <hr className="mb-3 border-slate-200" />
+            <hr className="mb-3 border-brand-dark/10" />
             <Link href={project.src} target="_blank" rel="noopener noreferrer">
-              <video className="rounded-lg border border-slate-200" autoPlay loop muted playsInline preload="metadata">
+              <video className="rounded-lg border border-brand-dark/10" autoPlay loop muted playsInline preload="metadata">
                 <source src={project.src} type="video/mp4" />
               </video>
             </Link>

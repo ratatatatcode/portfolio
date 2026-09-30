@@ -35,12 +35,12 @@ export default function SkillsListComponent() {
   ];
 
   return (
-    <section className="w-full border-t border-slate-300 pt-5 text-sm md:p-4 md:pt-5">
+    <section className="w-full border-b border-brand-dark/20 pb-5 text-sm md:p-4 md:pb-5">
       <div className="mb-4 flex items-end justify-between gap-4">
         <div>
-          <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-blue-700">CAPABILITIES</p>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">Skills & tools</h2>
-          <p className="mt-1 text-sm text-slate-500">Tools for building and improving digital products.</p>
+          <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-brand-strong">CAPABILITIES</p>
+          <h2 className="text-2xl font-bold tracking-tight text-brand-dark">Skills & tools</h2>
+          <p className="mt-1 text-sm text-brand-dark/60">Tools for building and improving digital products.</p>
         </div>
       </div>
       <div className="flex w-full flex-wrap gap-1.5">
@@ -49,7 +49,7 @@ export default function SkillsListComponent() {
             key={skill.text}
             text={skill.text}
             icon={skill.icon}
-            bg_color="bg-slate-100"
+            bg_color="bg-background"
             text_color="slate"
           />
         ))}

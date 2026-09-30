@@ -1,96 +1,41 @@
 'use client';
 
-import ExperienceModalComponent from './Experience';
 import CertificationsModalComponent from './Certification';
 import GitHubModalComponent from './GitHub';
 import FreelanceModalComponent from './Freelance';
 import LearningChallengesModalComponent from './Challenges';
+import TemplateModalComponent from './Template';
 import { GrCertificate } from 'react-icons/gr';
 import { FaGithub } from 'react-icons/fa6';
 import { FaGamepad } from 'react-icons/fa';
-import { FiMenu, FiX } from 'react-icons/fi';
-import { useEffect, useState } from 'react';
+import { Code2, LayoutTemplate } from 'lucide-react';
+import { useState } from 'react';
 
 export default function MenuComponent() {
-  const [showExperience, setShowExperience] = useState(false);
   const [showCertifications, setShowCertifications] = useState(false);
   const [showGitHub, setShowGitHub] = useState(false);
   const [showFreelance, setShowFreelance] = useState(false);
   const [showChallenges, setShowChallenges] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  useEffect(() => {
-    if (!isExpanded) return;
-
-    const collapseTimer = window.setTimeout(() => setIsExpanded(false), 5000);
-    return () => window.clearTimeout(collapseTimer);
-  }, [isExpanded]);
-
-  const menuButtonClass = `z-60 flex h-9 items-center gap-2 overflow-hidden rounded-md bg-blue-600 text-sm font-semibold text-white transition-[width,padding] duration-300 ease-in-out ${
-    isExpanded ? 'w-36 px-3' : 'w-9 px-2.5'
-  }`;
-  const menuLabelClass = `whitespace-nowrap transition-[max-width,opacity] duration-200 ease-in-out ${
-    isExpanded ? 'max-w-28 opacity-100 delay-100' : 'max-w-0 opacity-0'
-  }`;
+  const [showTemplate, setShowTemplate] = useState(false);
+  const menuButtonClass =
+    'flex h-10 w-full items-center justify-center rounded-lg text-sm font-medium text-brand-dark transition-colors hover:bg-brand-soft/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange lg:justify-start lg:gap-3 lg:px-3';
 
   return (
     <>
-      <div
-        className={`relative z-60 flex h-screen flex-col gap-2 overflow-hidden border-r border-blue-100 bg-blue-50/70 pt-10 transition-[width,padding] duration-300 ease-in-out ${
-          isExpanded ? 'w-44 items-start px-4' : 'w-full items-center px-0'
-        }`}
-      >
-        <button
-          type="button"
-          className={menuButtonClass}
-          aria-expanded={isExpanded}
-          aria-controls="portfolio-modal-menu"
-          aria-label={isExpanded ? 'Collapse modal menu' : 'Expand modal menu'}
-          onClick={() => setIsExpanded((expanded) => !expanded)}
-        >
-          <span className="relative h-4 w-4 shrink-0" aria-hidden="true">
-            <FiMenu
-              className={`absolute inset-0 transition-[opacity,transform] duration-200 ${
-                isExpanded ? 'scale-75 opacity-0' : 'scale-100 opacity-100 delay-100'
-              }`}
-            />
-            <FiX
-              className={`absolute inset-0 transition-[opacity,transform] duration-200 ${
-                isExpanded ? 'scale-100 opacity-100 delay-100' : 'scale-75 opacity-0'
-              }`}
-            />
-          </span>
-          <span className={menuLabelClass} aria-hidden="true">
-            Close menu
-          </span>
-        </button>
-
-        <div id="portfolio-modal-menu" className="flex flex-col items-start gap-2">
-          <button
-            type="button"
-            className={`${menuButtonClass} ${showExperience ? 'hidden' : 'flex'}`}
-            onClick={() => setShowExperience((prev) => !prev)}
-            disabled={showExperience}
-            aria-label="Open experience modal"
-          >
-            <span className="w-4 shrink-0 text-center text-xs" aria-hidden="true">
-              Ex
-            </span>
-            <span className={menuLabelClass} aria-hidden="true">
-              Experience
-            </span>
-          </button>
+      <aside className="relative hidden h-screen w-14 shrink-0 md:block lg:w-44">
+      <nav aria-label="Portfolio sections" className="relative z-60 flex h-screen w-full flex-col border-r border-brand-dark/10 bg-white px-2 pt-9 lg:px-3">
+        <p className="mb-4 hidden px-3 text-xs font-bold tracking-[0.18em] text-brand-strong lg:block">EXPLORE</p>
+        <div className="flex flex-col gap-1">
           <button
             type="button"
             className={`${menuButtonClass} ${showCertifications ? 'hidden' : 'flex'}`}
             onClick={() => setShowCertifications((prev) => !prev)}
             disabled={showCertifications}
             aria-label="Open certifications modal"
+            title="Certificates"
           >
-            <GrCertificate className="h-4 w-4 shrink-0" aria-hidden="true" />
-            <span className={menuLabelClass} aria-hidden="true">
-              Certificates
-            </span>
+            <GrCertificate className="h-4 w-4 shrink-0 text-brand-strong" aria-hidden="true" />
+            <span className="hidden lg:inline">Certificates</span>
           </button>
           <button
             type="button"
@@ -98,11 +43,10 @@ export default function MenuComponent() {
             onClick={() => setShowGitHub((prev) => !prev)}
             disabled={showGitHub}
             aria-label="Open GitHub modal"
+            title="GitHub"
           >
-            <FaGithub className="h-4 w-4 shrink-0" aria-hidden="true" />
-            <span className={menuLabelClass} aria-hidden="true">
-              GitHub
-            </span>
+            <FaGithub className="h-4 w-4 shrink-0 text-brand-strong" aria-hidden="true" />
+            <span className="hidden lg:inline">GitHub</span>
           </button>
           <button
             type="button"
@@ -110,13 +54,10 @@ export default function MenuComponent() {
             onClick={() => setShowFreelance((prev) => !prev)}
             disabled={showFreelance}
             aria-label="Open freelance modal"
+            title="Freelance"
           >
-            <span className="w-4 shrink-0 text-center text-xs" aria-hidden="true">
-              Fl
-            </span>
-            <span className={menuLabelClass} aria-hidden="true">
-              Freelance
-            </span>
+            <Code2 className="h-4 w-4 shrink-0 text-brand-strong" aria-hidden="true" />
+            <span className="hidden lg:inline">Freelance</span>
           </button>
           <button
             type="button"
@@ -124,18 +65,24 @@ export default function MenuComponent() {
             onClick={() => setShowChallenges((prev) => !prev)}
             disabled={showChallenges}
             aria-label="Open learning challenges modal"
+            title="Challenges"
           >
-            <FaGamepad className="h-4 w-4 shrink-0" aria-hidden="true" />
-            <span className={menuLabelClass} aria-hidden="true">
-              Challenges
-            </span>
+            <FaGamepad className="h-4 w-4 shrink-0 text-brand-strong" aria-hidden="true" />
+            <span className="hidden lg:inline">Challenges</span>
+          </button>
+          <button
+            type="button"
+            className={menuButtonClass}
+            onClick={() => setShowTemplate(true)}
+            aria-label="Open free template details"
+            title="Free Template"
+          >
+            <LayoutTemplate className="h-4 w-4 shrink-0 text-brand-strong" aria-hidden="true" />
+            <span className="hidden lg:inline">Free Template</span>
           </button>
         </div>
-      </div>
-
-      {showExperience && (
-        <ExperienceModalComponent showState={showExperience} setShowState={setShowExperience} />
-      )}
+      </nav>
+      </aside>
 
       {showCertifications && (
         <CertificationsModalComponent
@@ -157,8 +104,10 @@ export default function MenuComponent() {
         />
       )}
 
-      {(showExperience || showCertifications || showGitHub || showFreelance || showChallenges) && (
-        <div className="fixed inset-0 z-40 bg-slate-950/20 backdrop-blur-sm" />
+      {showTemplate && <TemplateModalComponent onClose={() => setShowTemplate(false)} />}
+
+      {(showCertifications || showGitHub || showFreelance || showChallenges) && (
+        <div className="fixed inset-0 z-40 bg-brand-dark/20 backdrop-blur-sm" />
       )}
     </>
   );

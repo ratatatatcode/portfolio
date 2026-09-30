@@ -9,7 +9,7 @@ const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#27272a',
+  themeColor: '#0f172a',
 };
 
 export const metadata: Metadata = {

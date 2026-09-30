@@ -32,15 +32,15 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="w-full pt-8 md:p-4 md:pt-10">
+    <section id="contact" className="w-full pt-5 md:p-4 md:pt-5">
       <div className="mb-5">
-        <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-blue-700">
+        <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-brand-strong">
           START A CONVERSATION
         </p>
-        <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+        <h2 className="text-2xl font-bold tracking-tight text-brand-dark">
           Tell me what you are working on
         </h2>
-        <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
+        <p className="mt-2 max-w-xl text-sm leading-6 text-brand-dark/70">
           Share the idea, the problem, or the setup you need help with. I will get back to you
           through email.
         </p>
@@ -54,32 +54,32 @@ export default function ContactForm() {
           aria-hidden="true"
           className="absolute -left-[9999px] h-px w-px overflow-hidden"
         />
-        <label className="grid gap-1.5 text-sm font-medium text-slate-700">
+        <label className="grid gap-1.5 text-sm font-medium text-brand-dark/80">
           Name
           <input
             name="name"
             required
             maxLength={100}
-            className="rounded-lg border border-slate-300 bg-white px-3 py-2.5 transition outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="rounded-lg border border-brand-dark/20 bg-white px-3 py-2.5 transition outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-soft"
           />
         </label>
-        <label className="grid gap-1.5 text-sm font-medium text-slate-700">
+        <label className="grid gap-1.5 text-sm font-medium text-brand-dark/80">
           Email
           <input
             type="email"
             name="email"
             required
             maxLength={254}
-            className="rounded-lg border border-slate-300 bg-white px-3 py-2.5 transition outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="rounded-lg border border-brand-dark/20 bg-white px-3 py-2.5 transition outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-soft"
           />
         </label>
-        <label className="grid gap-1.5 text-sm font-medium text-slate-700 sm:col-span-2">
+        <label className="grid gap-1.5 text-sm font-medium text-brand-dark/80 sm:col-span-2">
           What do you need help with?
           <select
             name="project"
             required
             defaultValue=""
-            className="rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-700 transition outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="rounded-lg border border-brand-dark/20 bg-white px-3 py-2.5 text-brand-dark/80 transition outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-soft"
           >
             <option value="" disabled>
               Select a service or problem
@@ -95,21 +95,21 @@ export default function ContactForm() {
             <option value="Other">Other</option>
           </select>
         </label>
-        <label className="grid gap-1.5 text-sm font-medium text-slate-700 sm:col-span-2">
+        <label className="grid gap-1.5 text-sm font-medium text-brand-dark/80 sm:col-span-2">
           Message
           <textarea
             name="message"
             required
             maxLength={5000}
             rows={5}
-            className="resize-y rounded-lg border border-slate-300 bg-white px-3 py-2.5 transition outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="resize-y rounded-lg border border-brand-dark/20 bg-white px-3 py-2.5 transition outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-soft"
           />
         </label>
         <div className="flex flex-wrap items-center gap-3 sm:col-span-2">
           <button
             type="submit"
             disabled={status === 'sending'}
-            className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex items-center gap-2 rounded-md bg-gradient-to-br from-brand-orange to-brand-strong px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {status === 'sending' ? 'Sending...' : 'Send message'}
             <Mail size={16} aria-hidden="true" />
