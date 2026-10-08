@@ -24,7 +24,7 @@ export default function IntroductionComponent() {
         <strong className="text-brand-dark">{siteConfig.introduction.emphasis}</strong>
         &nbsp;{siteConfig.introduction.summary}
       </p>
-      <div className="mt-7 rounded-xl bg-gradient-to-br from-brand-orange to-brand-strong p-4 text-white md:p-5">
+      <div className="mt-6 rounded-xl bg-gradient-to-br from-brand-orange to-brand-strong p-4 text-white md:mt-7 md:p-5">
         <p className="text-[10px] font-bold tracking-[0.2em] text-white">
           {siteConfig.serviceCta.eyebrow}
         </p>

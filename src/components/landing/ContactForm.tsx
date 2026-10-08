@@ -32,15 +32,15 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="w-full pt-5 md:p-4 md:pt-5">
-      <div className="mb-5">
+    <section id="contact" className="w-full border-b border-brand-dark/20 pb-6 md:border-b-0 md:p-4 md:pt-5">
+      <div className="mb-4">
         <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-brand-strong">
           START A CONVERSATION
         </p>
         <h2 className="text-2xl font-bold tracking-tight text-brand-dark">
           Tell me what you are working on
         </h2>
-        <p className="mt-2 max-w-xl text-sm leading-6 text-brand-dark/70">
+        <p className="mt-1 max-w-xl text-sm leading-6 text-brand-dark/70">
           Share the idea, the problem, or the setup you need help with. I will get back to you
           through email.
         </p>

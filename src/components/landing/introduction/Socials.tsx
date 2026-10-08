@@ -11,7 +11,7 @@ export default function SocialLinksComponent() {
     'inline-flex h-10 items-center justify-center rounded-md bg-gradient-to-br from-brand-orange to-brand-strong px-3.5 text-sm font-medium text-white transition hover:brightness-95';
 
   return (
-    <div className="mt-7 flex flex-col gap-4 border-t border-brand-dark/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
+    <div className="mt-6 flex flex-col gap-4 border-t border-brand-dark/10 pt-6 sm:flex-row sm:items-center sm:justify-between md:mt-7 md:pt-5">
       <div className="flex items-center gap-1.5">
         <a
           href={siteConfig.socialLinks.facebook}

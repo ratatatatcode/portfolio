@@ -9,6 +9,7 @@ import LiveProjectsComponent from '@/components/landing/projects/LiveProjects';
 import OtherProjectsComponent from '@/components/landing/projects/OtherProjects';
 import ProjectListComponent from '@/components/landing/projects/Projects';
 import { siteConfig } from '@/data/siteConfig';
+import { ExternalLink, LayoutTemplate } from 'lucide-react';
 
 const personSchema = {
   '@context': 'https://schema.org',
@@ -45,7 +46,7 @@ function ProjectsSection({ className = '', id }: { className?: string; id?: stri
       <div>
         <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-brand-strong">SELECTED WORK</p>
         <h2 className="text-2xl font-bold tracking-tight text-brand-dark">Projects</h2>
-        <p className="mt-1 text-sm leading-5 text-brand-dark/60">A few things I have built, shipped, and explored.</p>
+        <p className="mt-1 text-sm leading-6 text-brand-dark/60">A few things I have built, shipped, and explored.</p>
       </div>
       <LiveProjectsComponent />
       <ProjectListComponent />
@@ -70,11 +71,23 @@ export default function Home() {
         <section className="scrollbar-hide scroll-smooth flex w-full flex-col gap-6 overflow-y-auto p-6 md:h-screen md:min-w-0 md:flex-1 md:gap-0 md:p-4">
           <IntroductionComponent />
           <SkillsListComponent />
-          <ExperienceComponent className="border-t border-brand-dark/20 pt-6 md:hidden" />
+          <ExperienceComponent className="border-b border-brand-dark/20 pb-6 md:hidden" />
           <CertificationsComponent />
           <GitHubComponent />
-          <ProjectsSection className="pt-5 md:hidden" id="projects-mobile" />
+          <ProjectsSection className="border-b border-brand-dark/20 pb-6 md:hidden" id="projects-mobile" />
           <ContactForm />
+          <section aria-labelledby="free-template-title" className="rounded-xl border border-brand-soft bg-white p-5 md:hidden">
+            <LayoutTemplate size={24} className="mb-3 text-brand-strong" aria-hidden="true" />
+            <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-brand-strong">SHARE THIS PORTFOLIO</p>
+            <h2 id="free-template-title" className="text-2xl font-bold tracking-tight text-brand-dark">Free Template</h2>
+            <p className="mt-1 text-sm leading-6 text-brand-dark/70">
+              Use this portfolio as a starting point for your own site. The README explains how to run it, customize the content, and deploy it.
+            </p>
+            <a href="https://github.com/ratatatatcode/portfolio/blob/main/README.md" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-md bg-gradient-to-br from-brand-orange to-brand-strong px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange">
+              View the free template
+              <ExternalLink size={16} aria-hidden="true" />
+            </a>
+          </section>
         </section>
         <section className="scrollbar-hide hidden h-screen w-[35%] shrink-0 overflow-y-auto px-4 pt-9 pb-4 md:block lg:w-[30%] xl:w-[35%]">
           <p className="mb-4 text-xs font-bold tracking-[0.18em] text-brand-strong">EXPERIENCE &amp; PROJECTS</p>
