@@ -1,4 +1,4 @@
-// Run with the server running: node scripts/check-explore-drag.mjs [--dialog-speed]
+// Run with the server running: node scripts/check-explore-drag.mjs [--performance | --preview-layout]
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -131,6 +131,7 @@ async function main() {
       socket.send(JSON.stringify({ id, method, params }));
     });
   await send('Page.enable');
+  await send('Performance.enable');
   await send('Page.bringToFront');
   await send('Emulation.setDeviceMetricsOverride', {
     width: 1440,
@@ -171,6 +172,122 @@ async function main() {
       await evaluate(`(${panelExpression}).querySelector('button').click()`);
       await waitFor(`!(${panelExpression})`);
     }
+    return;
+  }
+  if (process.argv.includes('--preview-layout')) {
+    await send('Emulation.setDeviceMetricsOverride', {
+      width: 390,
+      height: 844,
+      deviceScaleFactor: 1,
+      mobile: true,
+    });
+    await evaluate(
+      `document.querySelector('#projects-mobile video').scrollIntoView({behavior:'instant',block:'center'})`
+    );
+    await waitFor(`document.querySelector('#projects-mobile video').videoWidth > 0`);
+    const preview = await evaluate(
+      `(() => { const video = document.querySelector('#projects-mobile video'); const r = video.getBoundingClientRect(); const style = getComputedStyle(video); return { width: r.width, height: r.height, videoWidth: video.videoWidth, videoHeight: video.videoHeight, border: parseFloat(style.borderTopWidth), background: style.backgroundColor }; })()`
+    );
+    console.log(JSON.stringify(preview));
+    if (process.env.CAPTURE_PREVIEW === '1') {
+      const screenshot = await send('Page.captureScreenshot', { format: 'png' });
+      fs.writeFileSync('.next/preview-border.png', Buffer.from(screenshot.data, 'base64'));
+    }
+    assert.equal(
+      preview.border,
+      0,
+      'Preview should not add a second border inside its project card'
+    );
+    assert(
+      Math.abs(preview.width / preview.height - preview.videoWidth / preview.videoHeight) < 0.01,
+      'Preview frame should match the recording aspect ratio'
+    );
+    console.log('PASS: preview uses its natural ratio without an extra border');
+    return;
+  }
+  if (process.argv.includes('--performance')) {
+    const sample = async () =>
+      evaluate(`(() => {
+      const videos = [...document.querySelectorAll('video')];
+      const visible = video => { const r = video.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth; };
+      return { width: innerWidth, videos: videos.length, loadedVideos: videos.filter(video => !!video.currentSrc).length, visibleVideos: videos.filter(visible).length, playingVideos: videos.filter(video => !video.paused).length, playingOffscreen: videos.filter(video => !video.paused && !visible(video)).length, mediaRequests: performance.getEntriesByType('resource').filter(entry => /\\.(mp4|mkv)(\\?|$)/.test(entry.name)).length, calendarRequests: performance.getEntriesByType('resource').filter(entry => entry.name.includes('github-contributions-api')).length };
+    })()`);
+    const initial = await sample();
+    const before = await send('Performance.getMetrics');
+    await pause(3000);
+    const after = await send('Performance.getMetrics');
+    const metric = (result, name) =>
+      result.metrics.find((entry) => entry.name === name)?.value || 0;
+    console.log(
+      JSON.stringify({
+        ...initial,
+        idleTaskMs: Math.round(
+          (metric(after, 'TaskDuration') - metric(before, 'TaskDuration')) * 1000
+        ),
+        idleScriptMs: Math.round(
+          (metric(after, 'ScriptDuration') - metric(before, 'ScriptDuration')) * 1000
+        ),
+      })
+    );
+    assert.equal(initial.playingOffscreen, 0, 'Offscreen and hidden videos must not keep playing');
+    assert(
+      initial.loadedVideos <= initial.visibleVideos,
+      'Initial media loading must be limited to visible previews'
+    );
+    assert.equal(
+      initial.calendarRequests,
+      0,
+      'The hidden mobile calendar must not fetch on desktop'
+    );
+    console.log('PASS: desktop initial media work is limited to visible content');
+    const desktopVideo = await evaluate(
+      `(() => { const video = [...document.querySelectorAll('video')].find(video => { const r = video.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.top >= 0 && r.bottom <= innerHeight; }); if (!video) return false; video.setAttribute('data-test-video', ''); return true; })()`
+    );
+    if (desktopVideo) {
+      await evaluate(
+        `document.querySelector('[data-test-video]').closest('main > section').scrollTo({top: 0, behavior: 'instant'})`
+      );
+      await pause(300);
+      assert(
+        await evaluate(`document.querySelector('[data-test-video]').paused`),
+        'Preview must pause when scrolled offscreen'
+      );
+    }
+    await send('Emulation.setDeviceMetricsOverride', {
+      width: 390,
+      height: 844,
+      deviceScaleFactor: 1,
+      mobile: true,
+    });
+    await send('Page.navigate', { url: process.env.TEST_URL || 'http://localhost:3000' });
+    await waitFor(
+      `document.readyState === 'complete' && !!document.getElementById('projects-mobile')`
+    );
+    await pause(1500);
+    const mobile = await sample();
+    console.log(JSON.stringify(mobile));
+    assert.equal(
+      mobile.loadedVideos,
+      0,
+      'Mobile must not load project videos before scrolling to them'
+    );
+    assert.equal(mobile.calendarRequests, 0, 'Mobile calendar must wait until it is visible');
+    await evaluate(
+      `document.querySelector('#projects-mobile video').scrollIntoView({behavior:'instant',block:'center'})`
+    );
+    await waitFor(`!!document.querySelector('#projects-mobile video').currentSrc`);
+    await waitFor(`!document.querySelector('#projects-mobile video').paused`);
+    assert(
+      (await sample()).loadedVideos <= 2,
+      'Scrolling to a preview must not load the entire gallery'
+    );
+    await evaluate(`window.scrollTo({top:0,behavior:'instant'})`);
+    await pause(300);
+    assert(
+      await evaluate(`[...document.querySelectorAll('video')].every(video => video.paused)`),
+      'All previews pause when offscreen'
+    );
+    console.log('PASS: mobile previews load on visibility and pause offscreen');
     return;
   }
   await evaluate(

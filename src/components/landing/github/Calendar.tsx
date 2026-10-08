@@ -1,23 +1,48 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { GitHubCalendar } from 'react-github-calendar';
+import { memo, useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { siteConfig } from '@/data/siteConfig';
 
-export default function GitHubCalendarClient() {
-  const [mounted, setMounted] = useState(false);
+const GitHubCalendar = dynamic(
+  () => import('react-github-calendar').then((module) => module.GitHubCalendar),
+  {
+    ssr: false,
+    loading: () => (
+      <p className="text-brand-dark/60 text-sm" role="status">
+        Loading contributions...
+      </p>
+    ),
+  }
+);
+
+function GitHubCalendarClient() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
+    const container = containerRef.current;
+    if (!container) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && entry.intersectionRatio > 0) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
   }, []);
 
-  if (!mounted) return null;
-
   return (
-    <GitHubCalendar
-      username={siteConfig.github.username}
-      year={siteConfig.github.contributionYear}
-    />
+    <div ref={containerRef} className="min-h-40">
+      {visible && (
+        <GitHubCalendar
+          username={siteConfig.github.username}
+          year={siteConfig.github.contributionYear}
+        />
+      )}
+    </div>
   );
 }
+
+export default memo(GitHubCalendarClient);

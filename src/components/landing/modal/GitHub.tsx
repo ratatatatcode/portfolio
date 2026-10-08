@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { githubStreakUrl, siteConfig } from '@/data/siteConfig';
-import { GitHubCalendar } from 'react-github-calendar';
+import { githubStreakUrl } from '@/data/siteConfig';
+import GitHubCalendarClient from '../github/Calendar';
 import ExploreDialog from './ExploreDialog';
 
 type GitHubModalProps = {
@@ -21,10 +21,7 @@ export default function GitHubModalComponent({ showState, setShowState }: GitHub
       onClose={() => setShowState(false)}
       className="fixed top-4 left-4 z-80 w-[calc(100vw-2rem)] md:top-1/3 md:left-[10%] md:w-120"
     >
-      <GitHubCalendar
-        username={siteConfig.github.username}
-        year={siteConfig.github.contributionYear}
-      />
+      <GitHubCalendarClient />
       <Image
         src={githubStreakUrl}
         alt="GitHub Streak"

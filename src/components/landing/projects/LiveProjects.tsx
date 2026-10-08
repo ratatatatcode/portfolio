@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Globe2 } from 'lucide-react';
 
 import { liveProjects } from '@/data/projects';
+import VideoPreview from './VideoPreview';
 
 export default function LiveProjectsComponent() {
   return (
@@ -41,9 +42,7 @@ export default function LiveProjectsComponent() {
             </div>
             <hr className="mb-3 border-brand-dark/10" />
             <Link href={project.src} target="_blank" rel="noopener noreferrer">
-              <video className="rounded-lg border border-brand-dark/10" autoPlay loop muted playsInline preload="metadata">
-                <source src={project.src} type="video/mp4" />
-              </video>
+              <VideoPreview src={project.src} title={project.title} />
             </Link>
           </div>
         ))}
