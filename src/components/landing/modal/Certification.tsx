@@ -1,10 +1,8 @@
 'use client';
 
 import { certifications } from '@/data/certifications';
-import Draggable from 'react-draggable';
-import { IoMdCloseCircle } from 'react-icons/io';
-import { useRef } from 'react';
 import { siteConfig } from '@/data/siteConfig';
+import ExploreDialog from './ExploreDialog';
 
 type CertificationModalProps = {
   showState: boolean;
@@ -15,49 +13,41 @@ export default function CertificationsModalComponent({
   showState,
   setShowState,
 }: CertificationModalProps) {
-  const nodeRef = useRef<HTMLDivElement>(null);
+  if (!showState) return null;
 
   return (
-    <Draggable nodeRef={nodeRef} handle=".drag-handle" cancel=".no-drag">
-      <div
-        ref={nodeRef}
-        className={`drag-handle fixed left-4 top-4 z-90 flex max-h-[calc(100vh-2rem)] w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-xl border border-brand-soft bg-white p-5 shadow-xl shadow-brand-dark/10 md:top-2/5 md:left-1/5 md:h-80 md:w-120 ${showState ? 'flex' : 'hidden'}`}
+    <ExploreDialog
+      title="Certifications"
+      eyebrow="LEARNING & CREDENTIALS"
+      description="Courses and certifications that support my technical foundation."
+      onClose={() => setShowState(false)}
+      className="fixed top-4 left-4 z-90 w-[calc(100vw-2rem)] md:top-2/5 md:left-1/5 md:h-80 md:w-120"
+    >
+      <a
+        href={siteConfig.documents.certifications}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-brand-strong self-start text-sm font-semibold underline underline-offset-4"
       >
-        <div className="shrink-0">
-          <div className="flex cursor-move items-start justify-between gap-4">
-            <a href={siteConfig.documents.certifications} target="_blank" rel="noopener noreferrer">
-              <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-brand-strong">LEARNING & CREDENTIALS</p>
-              <h2 className="no-drag text-xl font-bold tracking-tight text-brand-dark md:text-2xl">Certifications</h2>
-              <p className="mt-1 max-w-xl text-sm leading-6 text-brand-dark/70">Courses and certifications that support my technical foundation.</p>
-            </a>
-            <button className="no-drag rounded-md p-1 text-brand-dark/60 transition hover:bg-brand-soft/40 hover:text-brand-strong" onClick={() => setShowState(false)}>
-              <IoMdCloseCircle size={20} />
-            </button>
+        View certifications
+      </a>
+      {certifications.map((certification, idx) => (
+        <div key={idx} className="text-sm">
+          <p className="font-semibold">{certification.title}</p>
+          <div className="mt-1 mb-1 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+            <p className="italic">{certification.issuer}</p>
+            <p className="text-muted-foreground shrink-0 font-sans text-[0.7rem]">
+              {certification.date}
+            </p>
           </div>
-          <hr className="mb-3 border-brand-soft" />
-        </div>
-        <div className="scrollbar-hide no-drag flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto">
-          {certifications.map((certification, idx) => (
-            <div key={idx} className="my-1 text-sm">
-              <p className="font-semibold">{certification.title}</p>
-              <div className="mb-1 flex items-baseline justify-between gap-3">
-                <p className="italic">{certification.issuer}</p>
-                <p className="text-muted-foreground shrink-0 font-sans text-[0.7rem]">
-                  {certification.date}
-                </p>
-              </div>
-              {certification.description && (
-                <p className="font-sans">{certification.description}</p>
-              )}
-              {certification.detailedDesc.map((desc, idx) => (
-                <p key={idx} className="font-sans">
-                  • {desc}
-                </p>
-              ))}
-            </div>
+          {certification.description && <p className="font-sans">{certification.description}</p>}
+          {certification.detailedDesc.map((desc, idx) => (
+            <p key={idx} className="font-sans">
+              • {desc}
+            </p>
           ))}
         </div>
-      </div>
-    </Draggable>
+      ))}
+    </ExploreDialog>
   );
 }
