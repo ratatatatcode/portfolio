@@ -24,8 +24,18 @@ export const automationWorkflows = [
 
 export const projects = [
   {
+    id: 9,
+    title: 'Momendoom',
+    src: '/projects/momendoom.mp4',
+    description:
+      'Less doom. More momentum. A privacy-focused mobile app built with React Native and Expo for tracking Doom and Productive sessions. Explore time-spent charts and session history, add notes and tags, and keep your data locally on your device. I am looking for closed testing participants ahead of its upcoming Google Play Store release.',
+    github: '',
+    showBadges: false,
+  },
+  {
     id: 8,
     title: 'Kodo',
+    showBadges: false,
     src: '/projects/kodo.mp4',
     description:
       'An offline learning platform built with React Native for learning C++. The free version covers fundamentals, operators, and loops.',
