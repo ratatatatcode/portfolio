@@ -1,14 +1,14 @@
 export const liveProjects = [
   {
     id: 1,
-    title: 'Lyrica',
-    src: '/projects/lyrica.mp4',
+    title: 'AppTestersPH',
+    src: '/projects/apptestersph.mkv',
     description:
-      'A collaborative platform for songwriters, lyricists, composers, producers, and singers. Bring lyrics to life by connecting creators, finding collaborators, and helping singers discover songs they can perform and share.',
+      'A platform connecting app builders with testers and research participants for app feedback, surveys, and interviews. Features include tester profiles, participant discovery, testing workspaces, and submission and reward tracking. Only tester registration is open for now, and marketing has not started yet.',
     github: '',
     position: 'Project Leader',
     role: 'Full-Stack',
-    website: 'https://www.lyrica.studio/',
+    website: 'https://apptestersph.com',
   },
 ];
 
