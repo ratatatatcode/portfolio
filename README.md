@@ -54,14 +54,14 @@ npm run build
 
 The layout components usually do not need to be edited. Replace the values in these files:
 
-| File | What to customize |
-| --- | --- |
-| `src/data/siteConfig.ts` | Name, role, biography, contact details, social links, document links, GitHub username, site URL, and SEO metadata |
-| `src/data/experience.ts` | Education, employment, freelance work, and descriptions |
-| `src/data/certifications.ts` | Certifications, issuers, dates, summaries, and detailed topics |
-| `src/data/projects.ts` | Live, featured, and other projects |
-| `src/data/challenges.ts` | Learning challenges and external links |
-| `src/components/landing/Skills.tsx` | Skills and their matching icons |
+| File                                | What to customize                                                                                                 |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `src/data/siteConfig.ts`            | Name, role, biography, contact details, social links, document links, GitHub username, site URL, and SEO metadata |
+| `src/data/experience.ts`            | Education, employment, freelance work, and descriptions                                                           |
+| `src/data/certifications.ts`        | Certifications, issuers, dates, summaries, and detailed topics                                                    |
+| `src/data/projects.ts`              | Live, featured, and other projects                                                                                |
+| `src/data/challenges.ts`            | Learning challenges and external links                                                                            |
+| `src/components/landing/Skills.tsx` | Skills and their matching icons                                                                                   |
 
 Replace the matching assets under `public/`:
 
@@ -135,14 +135,14 @@ Refresh the GitHub repository page and confirm that your source files are visibl
 7. Choose **Production** for the live site. Add them to **Preview** too if preview deployments should send email.
 8. Click **Deploy**.
 
-| Variable | Example value | Required |
-| --- | --- | --- |
-| `SMTP_HOST` | `smtp.gmail.com` | Yes |
-| `SMTP_PORT` | `587` | Yes |
-| `SMTP_SERVICE` | blank or provider service name | No |
-| `SMTP_MAIL` | SMTP login email | Yes |
-| `SMTP_PASSWORD` | SMTP password or app password | Yes |
-| `CONTACT_EMAIL` | receiving email address | Yes |
+| Variable        | Example value                  | Required |
+| --------------- | ------------------------------ | -------- |
+| `SMTP_HOST`     | `smtp.gmail.com`               | Yes      |
+| `SMTP_PORT`     | `587`                          | Yes      |
+| `SMTP_SERVICE`  | blank or provider service name | No       |
+| `SMTP_MAIL`     | SMTP login email               | Yes      |
+| `SMTP_PASSWORD` | SMTP password or app password  | Yes      |
+| `CONTACT_EMAIL` | receiving email address        | Yes      |
 
 Vercel stores these values outside the source code. Environment variables are scoped separately for Development, Preview, and Production, so make sure the scope matches the deployment you are testing.
 

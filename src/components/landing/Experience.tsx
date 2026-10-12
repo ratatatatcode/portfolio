@@ -4,16 +4,18 @@ export default function ExperienceComponent({ className = '' }: { className?: st
   return (
     <section className={className}>
       <div className="mb-4">
-        <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-brand-strong">BACKGROUND</p>
-        <h2 className="text-2xl font-bold tracking-tight text-brand-dark">Experience</h2>
-        <p className="mt-1 text-sm leading-6 text-brand-dark/70">Education, internship, and freelance projects that shaped how I build software.</p>
+        <p className="text-brand-strong mb-1 text-[10px] font-bold tracking-[0.18em]">BACKGROUND</p>
+        <h2 className="text-brand-dark text-2xl font-bold tracking-tight">Experience</h2>
+        <p className="text-brand-dark/70 mt-1 text-sm leading-6">
+          Education, internship, and freelance projects that shaped how I build software.
+        </p>
       </div>
       <div className="flex flex-col gap-4">
         {experiences.map((experience) => (
-          <div key={experience.id} className="rounded-xl border border-brand-dark/10 bg-white p-4">
-            <p className="text-xs font-semibold text-brand-strong">{experience.date}</p>
-            <h3 className="mt-1 text-lg font-bold text-brand-dark">{experience.title}</h3>
-            <p className="mt-2 text-sm leading-6 text-brand-dark/70">{experience.detailedDesc}</p>
+          <div key={experience.id} className="border-brand-dark/10 rounded-xl border bg-white p-4">
+            <p className="text-brand-strong text-xs font-semibold">{experience.date}</p>
+            <h3 className="text-brand-dark mt-1 text-lg font-bold">{experience.title}</h3>
+            <p className="text-brand-dark/70 mt-2 text-sm leading-6">{experience.detailedDesc}</p>
           </div>
         ))}
       </div>

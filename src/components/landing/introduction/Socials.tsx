@@ -11,7 +11,7 @@ export default function SocialLinksComponent() {
     'inline-flex h-10 items-center justify-center rounded-md bg-gradient-to-br from-brand-orange to-brand-strong px-3.5 text-sm font-medium text-white transition hover:brightness-95';
 
   return (
-    <div className="mt-6 flex flex-col gap-4 border-t border-brand-dark/10 pt-6 sm:flex-row sm:items-center sm:justify-between md:mt-7 md:pt-5">
+    <div className="border-brand-dark/10 mt-6 flex flex-col gap-4 border-t pt-6 sm:flex-row sm:items-center sm:justify-between md:mt-7 md:pt-5">
       <div className="flex items-center gap-1.5">
         <a
           href={siteConfig.socialLinks.facebook}
@@ -40,11 +40,7 @@ export default function SocialLinksComponent() {
         >
           <FiGithub size={18} />
         </a>
-        <a
-          href={siteConfig.documents.cv}
-          aria-label="Open CV"
-          className={documentButtonClass}
-        >
+        <a href={siteConfig.documents.cv} aria-label="Open CV" className={documentButtonClass}>
           CV
         </a>
         <a
@@ -55,17 +51,17 @@ export default function SocialLinksComponent() {
           Resume
         </a>
       </div>
-      <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-brand-dark/70">
+      <div className="text-brand-dark/70 flex flex-wrap gap-x-4 gap-y-2 text-xs">
         <a
           href={`tel:${siteConfig.contact.phone}`}
-          className="flex items-center gap-1.5 transition hover:text-brand-strong"
+          className="hover:text-brand-strong flex items-center gap-1.5 transition"
         >
           <IoCall />
           <span>{siteConfig.contact.phone}</span>
         </a>
         <a
           href={`mailto:${siteConfig.contact.email}`}
-          className="flex items-center gap-1.5 transition hover:text-brand-strong"
+          className="hover:text-brand-strong flex items-center gap-1.5 transition"
         >
           <MdEmail />
           <span>{siteConfig.contact.email}</span>

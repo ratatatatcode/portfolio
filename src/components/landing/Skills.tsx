@@ -35,12 +35,16 @@ export default function SkillsListComponent() {
   ];
 
   return (
-    <section className="w-full border-b border-brand-dark/20 pb-6 text-sm md:p-4 md:pb-5">
+    <section className="border-brand-dark/20 w-full border-b pb-6 text-sm md:p-4 md:pb-5">
       <div className="mb-4 flex items-end justify-between gap-4">
         <div>
-          <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-brand-strong">CAPABILITIES</p>
-          <h2 className="text-2xl font-bold tracking-tight text-brand-dark">Skills & tools</h2>
-          <p className="mt-1 text-sm leading-6 text-brand-dark/60">Tools for building and improving digital products.</p>
+          <p className="text-brand-strong mb-1 text-[10px] font-bold tracking-[0.18em]">
+            CAPABILITIES
+          </p>
+          <h2 className="text-brand-dark text-2xl font-bold tracking-tight">Skills & tools</h2>
+          <p className="text-brand-dark/60 mt-1 text-sm leading-6">
+            Tools for building and improving digital products.
+          </p>
         </div>
       </div>
       <div className="flex w-full flex-wrap gap-1.5">

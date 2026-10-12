@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 export default function IntroductionComponent() {
   return (
-    <div className="relative z-10 w-full rounded-2xl border border-brand-soft bg-white p-5 md:mt-5 md:p-7">
-      <p className="mb-3 text-xs font-semibold tracking-[0.18em] text-brand-strong">
+    <div className="border-brand-soft relative z-10 w-full rounded-2xl border bg-white p-5 md:mt-5 md:p-7">
+      <p className="text-brand-strong mb-3 text-xs font-semibold tracking-[0.18em]">
         {siteConfig.owner.username}/<u>{siteConfig.introduction.eyebrowSuffix}</u>
       </p>
       <Image
@@ -14,17 +14,17 @@ export default function IntroductionComponent() {
         alt={`${siteConfig.owner.displayName} profile photo`}
         width={64}
         height={64}
-        className="absolute top-5 right-5 hidden h-16 w-16 rounded-full border-4 border-white object-cover ring-1 ring-brand-soft md:top-7 md:right-7 md:block"
+        className="ring-brand-soft absolute top-5 right-5 hidden h-16 w-16 rounded-full border-4 border-white object-cover ring-1 md:top-7 md:right-7 md:block"
       />
-      <h1 className="max-w-2xl text-3xl leading-tight font-bold tracking-tight text-brand-dark md:pr-24 md:text-4xl">
+      <h1 className="text-brand-dark max-w-2xl text-3xl leading-tight font-bold tracking-tight md:pr-24 md:text-4xl">
         {siteConfig.introduction.headline}
       </h1>
-      <p className="mt-4 max-w-2xl text-sm leading-6 text-brand-dark/70">
+      <p className="text-brand-dark/70 mt-4 max-w-2xl text-sm leading-6">
         {siteConfig.introduction.lead}&nbsp;
         <strong className="text-brand-dark">{siteConfig.introduction.emphasis}</strong>
         &nbsp;{siteConfig.introduction.summary}
       </p>
-      <div className="mt-6 rounded-xl bg-gradient-to-br from-brand-orange to-brand-strong p-4 text-white md:mt-7 md:p-5">
+      <div className="from-brand-orange to-brand-strong mt-6 rounded-xl bg-gradient-to-br p-4 text-white md:mt-7 md:p-5">
         <p className="text-[10px] font-bold tracking-[0.2em] text-white">
           {siteConfig.serviceCta.eyebrow}
         </p>
@@ -36,7 +36,7 @@ export default function IntroductionComponent() {
         </p>
         <a
           href="#contact"
-          className="mt-4 inline-flex items-center gap-2 rounded-md bg-brand-dark px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="bg-brand-dark hover:bg-brand-dark/85 mt-4 inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           {siteConfig.serviceCta.actionLabel}
           <Mail size={16} aria-hidden="true" />

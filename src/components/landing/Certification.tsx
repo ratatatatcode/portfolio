@@ -5,12 +5,16 @@ import { siteConfig } from '@/data/siteConfig';
 
 export default function CertificationsComponent() {
   return (
-    <section className="border-b border-brand-dark/20 pb-6 md:hidden">
+    <section className="border-brand-dark/20 border-b pb-6 md:hidden">
       <a href={siteConfig.documents.certifications} target="_blank" rel="noopener noreferrer">
-        <p className="mb-1 text-[10px] font-bold tracking-[0.18em] text-brand-strong">LEARNING & CREDENTIALS</p>
-        <h2 className="text-2xl font-bold tracking-tight text-brand-dark">Certifications</h2>
+        <p className="text-brand-strong mb-1 text-[10px] font-bold tracking-[0.18em]">
+          LEARNING & CREDENTIALS
+        </p>
+        <h2 className="text-brand-dark text-2xl font-bold tracking-tight">Certifications</h2>
       </a>
-      <p className="mt-1 mb-4 text-sm leading-6 text-brand-dark/70">Courses and certifications that support my technical foundation.</p>
+      <p className="text-brand-dark/70 mt-1 mb-4 text-sm leading-6">
+        Courses and certifications that support my technical foundation.
+      </p>
       <div className="flex flex-col gap-4">
         {certifications.map((certification, idx) => (
           <div key={idx}>

@@ -75,7 +75,7 @@ export async function POST(request: Request) {
     }
 
     const values = Object.fromEntries(
-      requiredFields.map((field) => [field, String(body[field] ?? '').trim()]),
+      requiredFields.map((field) => [field, String(body[field] ?? '').trim()])
     ) as Record<(typeof requiredFields)[number], string>;
 
     if (requiredFields.some((field) => !values[field])) {
