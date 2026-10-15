@@ -238,6 +238,22 @@ When the site receives more traffic or spam, Cloudflare can add edge-level filte
 
 Cloudflare protects traffic sent through the proxied custom domain. The underlying Vercel deployment URL may still be reachable directly, so keep Vercel project access controlled and use any available Vercel firewall or deployment-protection features as an additional layer.
 
+## Momendoom privacy policy
+
+The public HTML policy lives at `/momendoom/privacy-policy`. After deploying this
+portfolio, its configured production URL is
+`https://magnaye.online/momendoom/privacy-policy`.
+
+Before submitting Momendoom to Google Play:
+
+1. Deploy this change and verify the URL opens over HTTPS without a login, geographic restriction, or deployment protection.
+2. Enter that URL in Play Console's Privacy Policy field.
+3. Add a Privacy Policy link to the same URL inside Momendoom (for example, in Settings).
+4. Confirm the developer identity/contact details and the policy match the released app, and complete the Data safety form consistently with its actual behavior.
+
+The policy is based on the current local-only app implementation, including optional
+notifications and user-initiated JSON backups. Update it when data practices change.
+
 ## Scripts
 
 ```bash

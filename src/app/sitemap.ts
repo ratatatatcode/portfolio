@@ -9,5 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
+    {
+      url: `${siteConfig.siteUrl}/momendoom/privacy-policy`,
+      lastModified: new Date('2026-10-16'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ];
 }
